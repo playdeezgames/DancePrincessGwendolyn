@@ -9,6 +9,13 @@
             MakeRoad(townLocations(index), capitolLocation, 11, RouteType.BrickRoad)
             MakeRoad(townLocations(index), townLocations((index + 2) Mod townLocations.Count), 19, RouteType.DirtPath)
         Next
+
+        MakePlayerCharacter(townLocations(0))
+    End Sub
+
+    Private Sub MakePlayerCharacter(location As Location)
+        Dim playerCharacter = Character.Create(CharacterType.Gwendolyn, location)
+        PlayerData.Write(playerCharacter.Id)
     End Sub
 
     Private Sub MakeRoad(fromLocation As Location, toLocation As Location, locationCount As Integer, routeType As RouteType)
@@ -42,4 +49,10 @@
         End While
         Return result
     End Function
+
+    Public ReadOnly Property PlayerCharacter As Character
+        Get
+            Return Character.FromId(PlayerData.Read())
+        End Get
+    End Property
 End Module

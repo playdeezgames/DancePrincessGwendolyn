@@ -10,8 +10,7 @@
         AnsiConsole.MarkupLine("[green]A Game in VB.NET About Solving Disputes with Dance Instead of Violence[/]")
         AnsiConsole.MarkupLine("A Production of [magenta]TheGrumpyGameDev[/] for [aqua]The Pacifist Jam (Honest Jam IV)[/]")
 
-        Dim prompt = New SelectionPrompt(Of String) With {.Title = ""}
-        prompt.AddChoices("Ok")
-        AnsiConsole.Prompt(prompt)
+        OkPrompt()
     End Sub
+
 End Module
