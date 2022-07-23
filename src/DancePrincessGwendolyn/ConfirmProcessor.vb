@@ -1,7 +1,7 @@
-﻿Module ConfirmQuitProcessor
-    Friend Function Run() As Boolean
+﻿Module ConfirmProcessor
+    Friend Function Run(text As String) As Boolean
         AnsiConsole.WriteLine()
-        Dim prompt As New SelectionPrompt(Of String) With {.Title = "[red]Are you sure you want to quit?[/]"}
+        Dim prompt As New SelectionPrompt(Of String) With {.Title = $"[red]{text}[/]"}
         prompt.AddChoices(NoText, YesText)
         Select Case AnsiConsole.Prompt(prompt)
             Case YesText
