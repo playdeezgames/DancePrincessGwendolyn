@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DancePrincessGwendolyn", "DancePrincessGwendolyn\DancePrincessGwendolyn.vbproj", "{F28BDB40-EB09-4ACD-81CF-A8778EF25156}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stuff", "Stuff", "{A4C47830-374A-4794-B3C5-A6FA9AB12DAA}"
+	ProjectSection(SolutionItems) = preProject
+		..\butler.sh = ..\butler.sh
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SPLORR.Data", "SPLORR.Data\SPLORR.Data.vbproj", "{DE40F766-ABE4-4587-912F-B1DB3FA04E36}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SPLORR.Game", "SPLORR.Game\SPLORR.Game.vbproj", "{7B104F89-4192-402B-ADF9-AD118160BDD5}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DancePrincessGwendolyn.Data", "DancePrincessGwendolyn.Data\DancePrincessGwendolyn.Data.vbproj", "{7371BE38-B531-4C16-8AC0-9A6801F46F39}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DancePrincessGwendolyn.Game", "DancePrincessGwendolyn.Game\DancePrincessGwendolyn.Game.vbproj", "{BBA4A982-D38A-47C4-BF2F-31D4CF205486}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{834881EA-3413-4EFC-95A0-104ADBBE2CFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F28BDB40-EB09-4ACD-81CF-A8778EF25156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28BDB40-EB09-4ACD-81CF-A8778EF25156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28BDB40-EB09-4ACD-81CF-A8778EF25156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28BDB40-EB09-4ACD-81CF-A8778EF25156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE40F766-ABE4-4587-912F-B1DB3FA04E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE40F766-ABE4-4587-912F-B1DB3FA04E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE40F766-ABE4-4587-912F-B1DB3FA04E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE40F766-ABE4-4587-912F-B1DB3FA04E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B104F89-4192-402B-ADF9-AD118160BDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B104F89-4192-402B-ADF9-AD118160BDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B104F89-4192-402B-ADF9-AD118160BDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B104F89-4192-402B-ADF9-AD118160BDD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7371BE38-B531-4C16-8AC0-9A6801F46F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7371BE38-B531-4C16-8AC0-9A6801F46F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7371BE38-B531-4C16-8AC0-9A6801F46F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7371BE38-B531-4C16-8AC0-9A6801F46F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA4A982-D38A-47C4-BF2F-31D4CF205486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA4A982-D38A-47C4-BF2F-31D4CF205486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA4A982-D38A-47C4-BF2F-31D4CF205486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA4A982-D38A-47C4-BF2F-31D4CF205486}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE40F766-ABE4-4587-912F-B1DB3FA04E36} = {834881EA-3413-4EFC-95A0-104ADBBE2CFC}
+		{7B104F89-4192-402B-ADF9-AD118160BDD5} = {834881EA-3413-4EFC-95A0-104ADBBE2CFC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {141C4437-09B3-4D43-9A4C-7D1289F49261}
+	EndGlobalSection
+EndGlobal
