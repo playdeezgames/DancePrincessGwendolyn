@@ -1,5 +1,6 @@
 ﻿Public Enum LocationType
     None
     Road
-    Town
+    TownEntrance
+    CapitolEntrance
 End Enum

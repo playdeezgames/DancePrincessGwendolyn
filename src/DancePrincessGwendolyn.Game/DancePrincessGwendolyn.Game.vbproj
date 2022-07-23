@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <Import Include="DancePrincessGwendolyn.Data" />
+    <Import Include="SPLORR.Data" />
+    <Import Include="SPLORR.Game" />
   </ItemGroup>
 
 </Project>
