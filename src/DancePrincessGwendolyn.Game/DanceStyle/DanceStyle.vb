@@ -12,6 +12,6 @@ End Enum
 Public Module DanceStyleExtensions
     <Extension>
     Function Name(danceStyle As DanceStyle) As String
-
+        Return DanceStyleDescriptors(danceStyle).Name
     End Function
 End Module

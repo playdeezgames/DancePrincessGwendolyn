@@ -3,8 +3,16 @@ Public Class Location
     Public Sub New(locationId As Long)
         Id = locationId
     End Sub
-    Public Shared Function FromId(locationId As Long) As Location
-        Return New Location(locationId)
+    Public ReadOnly Property LocationType As LocationType
+        Get
+            Return CType(LocationData.ReadLocationType(Id).Value, LocationType)
+        End Get
+    End Property
+    Public Shared Function FromId(locationId As Long?) As Location
+        If Not locationId.HasValue Then
+            Return Nothing
+        End If
+        Return New Location(locationId.Value)
     End Function
     Public Shared Function Create(locationType As LocationType) As Location
         Return FromId(LocationData.Create(locationType))

@@ -6,15 +6,18 @@
 
     Public Property Location As Location
         Get
-            Return CharacterData.ReadLocation(Id).Value
+            Return Location.FromId(CharacterData.ReadLocation(Id))
         End Get
         Set(value As Location)
             CharacterData.WriteLocation(Id, value.Id)
         End Set
     End Property
 
-    Public Shared Function FromId(characterId As Long) As Character
-        Return New Character(characterId)
+    Public Shared Function FromId(characterId As Long?) As Character
+        If Not characterId.HasValue Then
+            Return Nothing
+        End If
+        Return New Character(characterId.Value)
     End Function
     Public Shared Function Create(characterType As CharacterType, location As Location) As Character
         Return FromId(CharacterData.Create(characterType, location.Id))
