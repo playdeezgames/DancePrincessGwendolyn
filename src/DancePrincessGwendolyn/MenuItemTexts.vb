@@ -1,0 +1,5 @@
+﻿Module MenuItemTexts
+    Public Const NoText = "No"
+    Public Const QuitText = "Quit"
+    Public Const YesText = "Yes"
+End Module

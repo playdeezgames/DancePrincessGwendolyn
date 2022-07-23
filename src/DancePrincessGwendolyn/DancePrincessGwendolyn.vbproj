@@ -27,4 +27,8 @@
     <ProjectReference Include="..\DancePrincessGwendolyn.Game\DancePrincessGwendolyn.Game.vbproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Import Include="Spectre.Console" />
+  </ItemGroup>
+
 </Project>
