@@ -6,3 +6,4 @@ A Game in VB.NET About Solving Disputes with Dance Instead of Violence
 01 Dance Princess Gwendolyn #pacifistjam
 
 * 01 - 20220723
+* 02 - 20220724

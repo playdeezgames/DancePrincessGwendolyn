@@ -10,6 +10,8 @@
         AnsiConsole.MarkupLine("[green]A Game in VB.NET About Solving Disputes with Dance Instead of Violence[/]")
         AnsiConsole.MarkupLine("A Production of [magenta]TheGrumpyGameDev[/] for [aqua]The Pacifist Jam (Honest Jam IV)[/]")
 
+        SfxPlayer.Play(Sfx.Title)
+
         OkPrompt()
     End Sub
 
