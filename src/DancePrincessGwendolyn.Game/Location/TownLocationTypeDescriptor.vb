@@ -1,9 +1,9 @@
-﻿Friend Class TownEntranceLocationTypeDescriptor
+﻿Friend Class TownLocationTypeDescriptor
     Inherits LocationTypeDescriptor
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "Town Entrance"
+            Return "Town"
         End Get
     End Property
 End Class

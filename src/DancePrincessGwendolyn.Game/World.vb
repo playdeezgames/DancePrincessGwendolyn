@@ -6,8 +6,11 @@
 
         For index = 0 To townLocations.Count - 1
             MakeRoad(townLocations(index), townLocations((index + 1) Mod townLocations.Count), 11, RouteType.GravelRoad)
+            MakeRoad(townLocations(index), townLocations((index + townLocations.Count - 1) Mod townLocations.Count), 11, RouteType.GravelRoad)
             MakeRoad(townLocations(index), capitolLocation, 11, RouteType.BrickRoad)
+            MakeRoad(capitolLocation, townLocations(index), 11, RouteType.BrickRoad)
             MakeRoad(townLocations(index), townLocations((index + 2) Mod townLocations.Count), 19, RouteType.DirtPath)
+            MakeRoad(townLocations(index), townLocations((index + townLocations.Count - 2) Mod townLocations.Count), 19, RouteType.DirtPath)
         Next
 
         MakePlayerCharacter(townLocations(0))
@@ -34,14 +37,14 @@
     End Sub
 
     Private Function CreateCapitol() As Location
-        Return Location.Create(LocationType.CapitolEntrance)
+        Return Location.Create(LocationType.Capitol)
     End Function
 
     Private Function CreateTownLocations() As List(Of Location)
         Dim danceStyles As New HashSet(Of DanceStyle)(AllDanceStyles)
         Dim result As New List(Of Location)
         While danceStyles.Any
-            Dim townLocation = Location.Create(LocationType.TownEntrance)
+            Dim townLocation = Location.Create(LocationType.Town)
             Dim style = RNG.FromEnumerable(danceStyles)
             danceStyles.Remove(style)
             townLocation.DanceStyle = style

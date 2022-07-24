@@ -14,6 +14,13 @@ Public Class Location
         End If
         Return New Location(locationId.Value)
     End Function
+
+    Public ReadOnly Property Routes As IEnumerable(Of Route)
+        Get
+            Return RouteData.ReadForFromLocation(Id).Select(AddressOf Route.FromId)
+        End Get
+    End Property
+
     Public Shared Function Create(locationType As LocationType) As Location
         Return FromId(LocationData.Create(locationType))
     End Function
@@ -30,5 +37,15 @@ Public Class Location
             End If
             LocationDanceStyleData.Clear(Id)
         End Set
+    End Property
+    Public ReadOnly Property Name As String
+        Get
+            Select Case LocationType
+                Case LocationType.Town
+                    Return $"{LocationType.Name} of {DanceStyle.Value.Name}"
+                Case Else
+                    Return LocationType.Name
+            End Select
+        End Get
     End Property
 End Class

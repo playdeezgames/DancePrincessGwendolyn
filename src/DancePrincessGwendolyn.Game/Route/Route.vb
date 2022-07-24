@@ -16,5 +16,14 @@
                                  destinationLocation As Location) As Route
         Return FromId(RouteData.Create(routeType, fromLocation.Id, toLocation.Id, destinationLocation.Id))
     End Function
-
+    Public ReadOnly Property RouteType As RouteType
+        Get
+            Return CType(RouteData.ReadRouteType(Id).Value, RouteType)
+        End Get
+    End Property
+    Public ReadOnly Property DestinationLocation As Location
+        Get
+            Return Location.FromId(RouteData.ReadDestinationLocation(Id).Value)
+        End Get
+    End Property
 End Class

@@ -1,9 +1,9 @@
-﻿Friend Class CapitolEntranceLocationTypeDescriptor
+﻿Friend Class CapitolLocationTypeDescriptor
     Inherits LocationTypeDescriptor
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "Capitol Entrance"
+            Return "The Capitol"
         End Get
     End Property
 End Class

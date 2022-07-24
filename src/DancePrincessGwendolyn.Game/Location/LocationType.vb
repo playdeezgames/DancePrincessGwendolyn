@@ -3,8 +3,8 @@
 Public Enum LocationType
     None
     Road
-    TownEntrance
-    CapitolEntrance
+    Town
+    Capitol
 End Enum
 Public Module LocationTypeExtensions
     <Extension>

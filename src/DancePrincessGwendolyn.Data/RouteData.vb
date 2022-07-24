@@ -21,6 +21,31 @@
                 FOREIGN KEY ([{DestinationLocationIdColumn}]) REFERENCES [{LocationData.TableName}]([{LocationData.LocationIdColumn}])
             );")
     End Sub
+
+    Public Function ReadDestinationLocation(routeId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            DestinationLocationIdColumn,
+            (RouteIdColumn, routeId))
+    End Function
+
+    Public Function ReadRouteType(routeId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            RouteTypeColumn,
+            (RouteIdColumn, routeId))
+    End Function
+
+    Public Function ReadForFromLocation(fromLocationId As Long) As IEnumerable(Of Long)
+        Return ReadRecordsWithColumnValue(Of Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            RouteIdColumn,
+            (FromLocationIdColumn, fromLocationId))
+    End Function
+
     Public Function Create(routeType As Long, fromLocationId As Long, toLocationId As Long, destinationLocationId As Long) As Long
         Return CreateRecord(
             AddressOf Initialize,
