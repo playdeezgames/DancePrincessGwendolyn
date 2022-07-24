@@ -22,4 +22,15 @@
     Public Shared Function Create(characterType As CharacterType, location As Location) As Character
         Return FromId(CharacterData.Create(characterType, location.Id))
     End Function
+    Public ReadOnly Property CharacterType As CharacterType
+        Get
+            Return CType(CharacterData.ReadCharacterType(Id).Value, CharacterType)
+        End Get
+    End Property
+
+    Public ReadOnly Property Name As String
+        Get
+            Return CharacterType.Name
+        End Get
+    End Property
 End Class

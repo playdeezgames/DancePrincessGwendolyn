@@ -15,12 +15,15 @@
 
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
             prompt.AddChoice(MoveText)
+            prompt.AddChoice(ProfileText)
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
                 Case GameMenuText
                     done = GameMenuProcessor.Run()
                 Case MoveText
                     MoveProcessor.Run()
+                Case ProfileText
+                    ProfileProcessor.Run()
             End Select
         End While
     End Sub

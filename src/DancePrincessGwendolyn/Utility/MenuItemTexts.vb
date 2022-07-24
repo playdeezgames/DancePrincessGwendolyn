@@ -5,6 +5,7 @@
     Friend Const MoveText = "Move..."
     Friend Const NeverMindText = "Never Mind"
     Friend Const NoText = "No"
+    Friend Const ProfileText = "Profile"
     Friend Const QuitText = "Quit"
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
