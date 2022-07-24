@@ -26,4 +26,14 @@
             Return Location.FromId(RouteData.ReadDestinationLocation(Id).Value)
         End Get
     End Property
+    Public ReadOnly Property ToLocation As Location
+        Get
+            Return Location.FromId(RouteData.ReadToLocation(Id).Value)
+        End Get
+    End Property
+    Public ReadOnly Property Name As String
+        Get
+            Return $"{RouteType.Name} to {DestinationLocation.Name}"
+        End Get
+    End Property
 End Class

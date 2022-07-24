@@ -11,14 +11,17 @@
             AnsiConsole.MarkupLine("Routes:")
             Dim routes As IEnumerable(Of Route) = location.Routes
             For Each route In routes
-                AnsiConsole.MarkupLine($"{route.RouteType.Name} to {route.DestinationLocation.Name}")
+                AnsiConsole.MarkupLine(route.Name)
             Next
 
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
+            prompt.AddChoice(MoveText)
             prompt.AddChoice(AbandonGameText)
             Select Case AnsiConsole.Prompt(prompt)
                 Case AbandonGameText
                     done = ConfirmProcessor.Run("Are you sure you want to abandon the game?")
+                Case MoveText
+                    MoveProcessor.Run()
             End Select
         End While
     End Sub

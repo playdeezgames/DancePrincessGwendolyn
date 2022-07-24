@@ -22,6 +22,14 @@
             );")
     End Sub
 
+    Public Function ReadToLocation(routeId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            ToLocationIdColumn,
+            (RouteIdColumn, routeId))
+    End Function
+
     Public Function ReadDestinationLocation(routeId As Long) As Long?
         Return ReadColumnValue(Of Long, Long)(
             AddressOf Initialize,
