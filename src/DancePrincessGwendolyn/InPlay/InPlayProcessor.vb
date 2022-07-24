@@ -6,7 +6,6 @@
             Dim location As Location = character.Location
             AnsiConsole.Clear()
             AnsiConsole.MarkupLine($"Location: {location.Name}")
-            AnsiConsole.MarkupLine($"TODO: make it possible to do something other than abandon the game!")
 
             AnsiConsole.MarkupLine("Routes:")
             Dim routes As IEnumerable(Of Route) = location.Routes

@@ -6,11 +6,8 @@
 
         For index = 0 To townLocations.Count - 1
             MakeRoad(townLocations(index), townLocations((index + 1) Mod townLocations.Count), 11, RouteType.GravelRoad)
-            MakeRoad(townLocations(index), townLocations((index + townLocations.Count - 1) Mod townLocations.Count), 11, RouteType.GravelRoad)
             MakeRoad(townLocations(index), capitolLocation, 11, RouteType.BrickRoad)
-            MakeRoad(capitolLocation, townLocations(index), 11, RouteType.BrickRoad)
             MakeRoad(townLocations(index), townLocations((index + 2) Mod townLocations.Count), 19, RouteType.DirtPath)
-            MakeRoad(townLocations(index), townLocations((index + townLocations.Count - 2) Mod townLocations.Count), 19, RouteType.DirtPath)
         Next
 
         MakePlayerCharacter(townLocations(0))
@@ -27,12 +24,12 @@
             roadLocations.Add(Location.Create(LocationType.Road))
         End While
         Route.Create(routeType, fromLocation, roadLocations(0), toLocation)
+        Route.Create(routeType, roadLocations(0), fromLocation, fromLocation)
         Route.Create(routeType, roadLocations(locationCount - 1), toLocation, toLocation)
+        Route.Create(routeType, toLocation, roadLocations(locationCount - 1), fromLocation)
         For index = 0 To locationCount - 2
             Route.Create(routeType, roadLocations(index), roadLocations(index + 1), toLocation)
-        Next
-        For index = 1 To locationCount - 1
-            Route.Create(routeType, roadLocations(index), roadLocations(index - 1), fromLocation)
+            Route.Create(routeType, roadLocations(index + 1), roadLocations(index), fromLocation)
         Next
     End Sub
 
