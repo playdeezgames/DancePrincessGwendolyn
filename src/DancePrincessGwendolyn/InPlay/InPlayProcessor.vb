@@ -15,10 +15,10 @@
 
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
             prompt.AddChoice(MoveText)
-            prompt.AddChoice(AbandonGameText)
+            prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
-                Case AbandonGameText
-                    done = ConfirmProcessor.Run("Are you sure you want to abandon the game?")
+                Case GameMenuText
+                    done = GameMenuProcessor.Run()
                 Case MoveText
                     MoveProcessor.Run()
             End Select
