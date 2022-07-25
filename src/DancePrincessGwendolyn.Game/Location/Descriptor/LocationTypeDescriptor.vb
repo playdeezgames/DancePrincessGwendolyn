@@ -1,5 +1,6 @@
 ﻿Friend MustInherit Class LocationTypeDescriptor
     MustOverride ReadOnly Property Name As String
+    Friend MustOverride Sub OnRefresh(location As Location)
 End Class
 Friend Module LocationTypeDescriptorUtility
     Friend ReadOnly LocationTypeDescriptors As IReadOnlyDictionary(Of LocationType, LocationTypeDescriptor) =

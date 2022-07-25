@@ -15,6 +15,10 @@ Public Class Location
         Return New Location(locationId.Value)
     End Function
 
+    Friend Sub Refresh()
+        LocationType.OnRefresh(Me)
+    End Sub
+
     Public ReadOnly Property Routes As IEnumerable(Of Route)
         Get
             Return RouteData.ReadForFromLocation(Id).Select(AddressOf Route.FromId)

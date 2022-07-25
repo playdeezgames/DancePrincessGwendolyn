@@ -13,4 +13,8 @@ Public Module LocationTypeExtensions
     Function Name(locationType As LocationType) As String
         Return LocationTypeDescriptors(locationType).Name
     End Function
+    <Extension>
+    Sub OnRefresh(locationType As LocationType, location As Location)
+        LocationTypeDescriptors(locationType).OnRefresh(location)
+    End Sub
 End Module
