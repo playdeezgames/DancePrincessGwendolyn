@@ -8,6 +8,8 @@
     End Property
 
     Friend Overrides Sub OnRefresh(location As Location)
-
+        If Not location.NonPlayerCharacters.Any Then
+            Character.Create(CharacterType.BalletN00b, location)
+        End If
     End Sub
 End Class

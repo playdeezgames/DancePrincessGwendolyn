@@ -7,6 +7,10 @@
             AnsiConsole.Clear()
             AnsiConsole.MarkupLine($"Location: {location.Name}")
 
+            For Each npc In location.NonPlayerCharacters
+                AnsiConsole.MarkupLine($"There is {npc.Name} here.")
+            Next
+
             AnsiConsole.MarkupLine("Routes:")
             Dim routes As IEnumerable(Of Route) = location.Routes
             For Each route In routes

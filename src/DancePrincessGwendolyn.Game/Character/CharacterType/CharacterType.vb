@@ -3,6 +3,12 @@
 Public Enum CharacterType
     None
     Gwendolyn
+    BalletN00b
+    'BollywoodN00b
+    'CheerleadingN00b
+    'HipHopN00b
+    'LineDancingN00b
+    'TapDancingN00b
 End Enum
 Public Module CharacterTypeExtensions
     <Extension>

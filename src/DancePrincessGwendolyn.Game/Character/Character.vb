@@ -10,7 +10,7 @@
         End Get
         Set(value As Location)
             If value.Id <> CharacterData.ReadLocation(Id).Value Then
-                Location.Refresh()
+                value.Refresh()
                 CharacterData.WriteLocation(Id, value.Id)
             End If
         End Set

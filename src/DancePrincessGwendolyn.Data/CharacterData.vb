@@ -47,4 +47,12 @@
             (CharacterTypeColumn, characterType),
             (LocationIdColumn, locationId))
     End Function
+
+    Public Function ForLocation(locationId As Long) As IEnumerable(Of Long)
+        Return ReadRecordsWithColumnValue(Of Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            CharacterIdColumn,
+            (LocationIdColumn, locationId))
+    End Function
 End Module

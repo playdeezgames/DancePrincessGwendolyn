@@ -6,6 +6,7 @@ Friend Module CharacterTypeDescriptorUtility
     Friend ReadOnly CharacterTypeDescriptors As IReadOnlyDictionary(Of CharacterType, CharacterTypeDescriptor) =
         New Dictionary(Of CharacterType, CharacterTypeDescriptor) From
         {
+            {CharacterType.BalletN00b, New BalletN00bDescriptor},
             {CharacterType.Gwendolyn, New GwendolynDescriptor}
         }
 End Module

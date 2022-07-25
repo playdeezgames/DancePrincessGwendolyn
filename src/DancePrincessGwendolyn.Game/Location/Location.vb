@@ -52,4 +52,15 @@ Public Class Location
             End Select
         End Get
     End Property
+    Public ReadOnly Property Characters As IEnumerable(Of Character)
+        Get
+            Return CharacterData.ForLocation(Id).Select(Function(x) Character.FromId(x))
+        End Get
+    End Property
+    Public ReadOnly Property NonPlayerCharacters As IEnumerable(Of Character)
+        Get
+            Dim playerCharacterId = World.PlayerCharacter.Id
+            Return Characters.Where(Function(x) x.Id <> playerCharacterId)
+        End Get
+    End Property
 End Class
