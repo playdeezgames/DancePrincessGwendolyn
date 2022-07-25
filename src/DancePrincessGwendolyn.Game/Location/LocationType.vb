@@ -2,9 +2,11 @@
 
 Public Enum LocationType
     None
-    Road
-    Town
+    BrickRoad
     Capitol
+    DirtPath
+    GravelRoad
+    Town
 End Enum
 Public Module LocationTypeExtensions
     <Extension>

@@ -5,9 +5,9 @@
         Dim capitolLocation As Location = CreateCapitol()
 
         For index = 0 To townLocations.Count - 1
-            MakeRoad(townLocations(index), townLocations((index + 1) Mod townLocations.Count), 11, RouteType.GravelRoad)
-            MakeRoad(townLocations(index), capitolLocation, 11, RouteType.BrickRoad)
-            MakeRoad(townLocations(index), townLocations((index + 2) Mod townLocations.Count), 19, RouteType.DirtPath)
+            MakeRoad(LocationType.GravelRoad, townLocations(index), townLocations((index + 1) Mod townLocations.Count), 11, RouteType.GravelRoad)
+            MakeRoad(LocationType.BrickRoad, townLocations(index), capitolLocation, 11, RouteType.BrickRoad)
+            MakeRoad(LocationType.DirtPath, townLocations(index), townLocations((index + 2) Mod townLocations.Count), 19, RouteType.DirtPath)
         Next
 
         MakePlayerCharacter(townLocations(0))
@@ -18,10 +18,10 @@
         PlayerData.Write(playerCharacter.Id)
     End Sub
 
-    Private Sub MakeRoad(fromLocation As Location, toLocation As Location, locationCount As Integer, routeType As RouteType)
+    Private Sub MakeRoad(locationType As LocationType, fromLocation As Location, toLocation As Location, locationCount As Integer, routeType As RouteType)
         Dim roadLocations As New List(Of Location)
         While roadLocations.Count < locationCount
-            roadLocations.Add(Location.Create(LocationType.Road))
+            roadLocations.Add(Location.Create(locationType))
         End While
         Route.Create(routeType, fromLocation, roadLocations(0), toLocation)
         Route.Create(routeType, roadLocations(0), fromLocation, fromLocation)
