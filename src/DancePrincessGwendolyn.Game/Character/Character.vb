@@ -83,4 +83,16 @@
                 Function(x) GetStatistic(x.CharacterStatisticType).Value)
         End Get
     End Property
+
+    Private Function UsageCount(danceStyle As DanceStyle) As Long
+        Return GetStatistic(danceStyle.UsageStatisticType).Value
+    End Function
+
+    Public Function RemainingUses(danceStyle As DanceStyle) As Long
+        Return Math.Min(Math.Max(0, TotalUses(danceStyle) - UsageCount(danceStyle)), TotalUses(danceStyle))
+    End Function
+
+    Public Function TotalUses(danceStyle As DanceStyle) As Long
+        Return GetStatistic(danceStyle.TotalUsageStatisticType).Value
+    End Function
 End Class

@@ -12,6 +12,18 @@ Public Enum CharacterStatisticType
     HipHopSkill
     LineDancingSkill
     TapDancingSkill
+    BalletSkillUses
+    BollywoodSkillUses
+    CheerleadingSkillUses
+    HipHopSkillUses
+    LineDancingSkillUses
+    TapDancingSkillUses
+    BalletSkillMaximumUses
+    BollywoodSkillMaximumUses
+    CheerleadingSkillMaximumUses
+    HipHopSkillMaximumUses
+    LineDancingSkillMaximumUses
+    TapDancingSkillMaximumUses
 End Enum
 Public Module CharacterStatisticTypeExtensions
     <Extension>
