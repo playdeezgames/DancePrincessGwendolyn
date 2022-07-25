@@ -26,7 +26,7 @@
     Private Shared ReadOnly DanceSkillValues As IReadOnlyList(Of Long) =
         New List(Of Long) From {4, 6, 8, 10, 12, 20}
 
-    Private Const UsageDividend As Long = 60
+    Private Const UsageDividend As Long = 24
 
     Private Sub DetermineDanceSkills(character As Character)
         Dim valuePool As New HashSet(Of Long)(DanceSkillValues)

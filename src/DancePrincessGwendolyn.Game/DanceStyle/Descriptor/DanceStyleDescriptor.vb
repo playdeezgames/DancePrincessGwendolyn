@@ -7,7 +7,7 @@
 
     MustOverride ReadOnly Property MaximumUsageStatisticType As CharacterStatisticType
 End Class
-Friend Module DanceStyleDescriptorUtility
+Public Module DanceStyleDescriptorUtility
     Friend ReadOnly DanceStyleDescriptors As IReadOnlyDictionary(Of DanceStyle, DanceStyleDescriptor) =
         New Dictionary(Of DanceStyle, DanceStyleDescriptor) From
         {
@@ -18,7 +18,7 @@ Friend Module DanceStyleDescriptorUtility
             {DanceStyle.LineDancing, New LineDancingDescriptor},
             {DanceStyle.TapDancing, New TapDancingDescriptor}
         }
-    Friend ReadOnly Property AllDanceStyles As IEnumerable(Of DanceStyle)
+    Public ReadOnly Property AllDanceStyles As IEnumerable(Of DanceStyle)
         Get
             Return DanceStyleDescriptors.Keys
         End Get
