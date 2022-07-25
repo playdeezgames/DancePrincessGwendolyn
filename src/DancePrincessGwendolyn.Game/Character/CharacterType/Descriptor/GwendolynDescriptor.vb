@@ -26,12 +26,17 @@
     Private Shared ReadOnly DanceSkillValues As IReadOnlyList(Of Long) =
         New List(Of Long) From {4, 6, 8, 10, 12, 20}
 
+    Private Const UsageDividend As Long = 60
+
     Private Sub DetermineDanceSkills(character As Character)
         Dim valuePool As New HashSet(Of Long)(DanceSkillValues)
         For Each style In AllDanceStyles
             Dim value = RNG.FromEnumerable(valuePool)
+            Dim maximumUses = UsageDividend \ value
             valuePool.Remove(value)
             CharacterStatisticData.Write(character.Id, style.CharacterStatisticType, value)
+            CharacterStatisticData.Write(character.Id, style.MaximumUsageStatisticType, maximumUses)
+            CharacterStatisticData.Write(character.Id, style.UsageStatisticType, 0)
         Next
     End Sub
 End Class

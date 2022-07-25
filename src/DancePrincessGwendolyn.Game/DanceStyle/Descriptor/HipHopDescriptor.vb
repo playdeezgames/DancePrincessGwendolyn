@@ -12,4 +12,16 @@
             Return CharacterStatisticType.HipHopSkill
         End Get
     End Property
+
+    Public Overrides ReadOnly Property UsageStatisticType As CharacterStatisticType
+        Get
+            Return Game.CharacterStatisticType.HipHopSkillUses
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property MaximumUsageStatisticType As CharacterStatisticType
+        Get
+            Return Game.CharacterStatisticType.HipHopSkillMaximumUses
+        End Get
+    End Property
 End Class

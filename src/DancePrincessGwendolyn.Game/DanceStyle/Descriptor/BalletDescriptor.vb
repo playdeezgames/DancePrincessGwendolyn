@@ -12,4 +12,16 @@
             Return CharacterStatisticType.BalletSkill
         End Get
     End Property
+
+    Public Overrides ReadOnly Property UsageStatisticType As CharacterStatisticType
+        Get
+            Return Game.CharacterStatisticType.BalletSkillUses
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property MaximumUsageStatisticType As CharacterStatisticType
+        Get
+            Return Game.CharacterStatisticType.BalletSkillMaximumUses
+        End Get
+    End Property
 End Class

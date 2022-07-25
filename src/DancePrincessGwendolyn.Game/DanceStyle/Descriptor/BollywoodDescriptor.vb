@@ -12,4 +12,16 @@
             Return CharacterStatisticType.BollywoodSkill
         End Get
     End Property
+
+    Public Overrides ReadOnly Property UsageStatisticType As CharacterStatisticType
+        Get
+            Return Game.CharacterStatisticType.BollywoodSkillUses
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property MaximumUsageStatisticType As CharacterStatisticType
+        Get
+            Return Game.CharacterStatisticType.BollywoodSkillMaximumUses
+        End Get
+    End Property
 End Class

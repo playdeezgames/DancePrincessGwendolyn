@@ -5,7 +5,7 @@
 
     MustOverride ReadOnly Property UsageStatisticType As CharacterStatisticType
 
-    MustOverride ReadOnly Property TotalUsageStatisticType As CharacterStatisticType
+    MustOverride ReadOnly Property MaximumUsageStatisticType As CharacterStatisticType
 End Class
 Friend Module DanceStyleDescriptorUtility
     Friend ReadOnly DanceStyleDescriptors As IReadOnlyDictionary(Of DanceStyle, DanceStyleDescriptor) =

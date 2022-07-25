@@ -93,6 +93,6 @@
     End Function
 
     Public Function TotalUses(danceStyle As DanceStyle) As Long
-        Return GetStatistic(danceStyle.TotalUsageStatisticType).Value
+        Return GetStatistic(danceStyle.MaximumUsageStatisticType).Value
     End Function
 End Class

@@ -18,10 +18,12 @@ Public Module DanceStyleExtensions
     Function CharacterStatisticType(danceStyle As DanceStyle) As CharacterStatisticType
         Return DanceStyleDescriptors(danceStyle).CharacterStatisticType
     End Function
+    <Extension>
     Function UsageStatisticType(danceStyle As DanceStyle) As CharacterStatisticType
         Return DanceStyleDescriptors(danceStyle).UsageStatisticType
     End Function
-    Function TotalUsageStatisticType(danceStyle As DanceStyle) As CharacterStatisticType
-        Return DanceStyleDescriptors(danceStyle).TotalUsageStatisticType
+    <Extension>
+    Function MaximumUsageStatisticType(danceStyle As DanceStyle) As CharacterStatisticType
+        Return DanceStyleDescriptors(danceStyle).MaximumUsageStatisticType
     End Function
 End Module
