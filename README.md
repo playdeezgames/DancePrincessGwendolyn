@@ -1,4 +1,4 @@
-# DancePrincessGwendolyn
+# Dance Princess Gwendolyn
 A Game in VB.NET About Solving Disputes with Dance Instead of Violence
 
 # Log
@@ -7,3 +7,4 @@ A Game in VB.NET About Solving Disputes with Dance Instead of Violence
 
 * 01 - 20220723
 * 02 - 20220724
+* 03 - 20220725

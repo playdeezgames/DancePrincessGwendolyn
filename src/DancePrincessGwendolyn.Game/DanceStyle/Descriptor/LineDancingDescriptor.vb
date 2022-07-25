@@ -6,4 +6,10 @@
             Return "Line Dancing"
         End Get
     End Property
+
+    Public Overrides ReadOnly Property CharacterStatisticType As CharacterStatisticType
+        Get
+            Return CharacterStatisticType.LineDancingSkill
+        End Get
+    End Property
 End Class

@@ -14,4 +14,8 @@ Public Module DanceStyleExtensions
     Function Name(danceStyle As DanceStyle) As String
         Return DanceStyleDescriptors(danceStyle).Name
     End Function
+    <Extension>
+    Function CharacterStatisticType(danceStyle As DanceStyle) As CharacterStatisticType
+        Return DanceStyleDescriptors(danceStyle).CharacterStatisticType
+    End Function
 End Module

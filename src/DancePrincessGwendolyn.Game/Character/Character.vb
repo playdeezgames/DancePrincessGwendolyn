@@ -38,7 +38,7 @@
 
     Private ReadOnly Property Anxiety As Long
         Get
-            Return CharacterStatisticData.Read(Id, CharacterStatisticType.Anxiety).Value
+            Return GetStatistic(CharacterStatisticType.Anxiety).Value
         End Get
     End Property
 
@@ -50,13 +50,13 @@
 
     Public ReadOnly Property MaximumConfidence As Long
         Get
-            Return CharacterStatisticData.Read(Id, CharacterStatisticType.Confidence).Value
+            Return GetStatistic(CharacterStatisticType.Confidence).Value
         End Get
     End Property
 
     Private ReadOnly Property Ennui As Long
         Get
-            Return CharacterStatisticData.Read(Id, CharacterStatisticType.Ennui).Value
+            Return GetStatistic(CharacterStatisticType.Ennui).Value
         End Get
     End Property
 
@@ -68,7 +68,19 @@
 
     Public ReadOnly Property MaximumEnthusiasm As Long
         Get
-            Return CharacterStatisticData.Read(Id, CharacterStatisticType.Enthusiasm).Value
+            Return GetStatistic(CharacterStatisticType.Enthusiasm).Value
+        End Get
+    End Property
+
+    Public Function GetStatistic(statisticType As CharacterStatisticType) As Long?
+        Return CharacterStatisticData.Read(Id, statisticType)
+    End Function
+
+    Public ReadOnly Property DanceSkills As IReadOnlyDictionary(Of DanceStyle, Long)
+        Get
+            Return AllDanceStyles.ToDictionary(
+                Function(x) x,
+                Function(x) GetStatistic(x.CharacterStatisticType).Value)
         End Get
     End Property
 End Class

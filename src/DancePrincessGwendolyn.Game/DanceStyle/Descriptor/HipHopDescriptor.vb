@@ -6,4 +6,10 @@
             Return "Hip Hop"
         End Get
     End Property
+
+    Public Overrides ReadOnly Property CharacterStatisticType As CharacterStatisticType
+        Get
+            Return CharacterStatisticType.HipHopSkill
+        End Get
+    End Property
 End Class

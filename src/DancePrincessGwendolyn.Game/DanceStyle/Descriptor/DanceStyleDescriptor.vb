@@ -1,5 +1,7 @@
 ﻿Friend MustInherit Class DanceStyleDescriptor
     MustOverride ReadOnly Property Name As String
+
+    MustOverride ReadOnly Property CharacterStatisticType As CharacterStatisticType
 End Class
 Friend Module DanceStyleDescriptorUtility
     Friend ReadOnly DanceStyleDescriptors As IReadOnlyDictionary(Of DanceStyle, DanceStyleDescriptor) =

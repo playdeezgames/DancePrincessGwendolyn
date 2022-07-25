@@ -6,4 +6,10 @@
             Return "Bollywood"
         End Get
     End Property
+
+    Public Overrides ReadOnly Property CharacterStatisticType As CharacterStatisticType
+        Get
+            Return CharacterStatisticType.BollywoodSkill
+        End Get
+    End Property
 End Class

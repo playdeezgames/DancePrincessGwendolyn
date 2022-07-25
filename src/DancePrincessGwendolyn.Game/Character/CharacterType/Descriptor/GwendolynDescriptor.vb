@@ -20,5 +20,18 @@
         For Each statistic In statistics
             CharacterStatisticData.Write(character.Id, statistic.Key, statistic.Value)
         Next
+        DetermineDanceSkills(character)
+    End Sub
+
+    Private Shared ReadOnly DanceSkillValues As IReadOnlyList(Of Long) =
+        New List(Of Long) From {4, 6, 8, 10, 12, 20}
+
+    Private Sub DetermineDanceSkills(character As Character)
+        Dim valuePool As New HashSet(Of Long)(DanceSkillValues)
+        For Each style In AllDanceStyles
+            Dim value = RNG.FromEnumerable(valuePool)
+            valuePool.Remove(value)
+            CharacterStatisticData.Write(character.Id, style.CharacterStatisticType, value)
+        Next
     End Sub
 End Class

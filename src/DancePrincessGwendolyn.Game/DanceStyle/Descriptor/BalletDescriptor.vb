@@ -6,4 +6,10 @@
             Return "Ballet"
         End Get
     End Property
+
+    Public Overrides ReadOnly Property CharacterStatisticType As CharacterStatisticType
+        Get
+            Return CharacterStatisticType.BalletSkill
+        End Get
+    End Property
 End Class

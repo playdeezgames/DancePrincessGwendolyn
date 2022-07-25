@@ -6,6 +6,12 @@ Public Enum CharacterStatisticType
     Enthusiasm
     Anxiety
     Ennui
+    BalletSkill
+    BollywoodSkill
+    CheerleadingSkill
+    HipHopSkill
+    LineDancingSkill
+    TapDancingSkill
 End Enum
 Public Module CharacterStatisticTypeExtensions
     <Extension>
