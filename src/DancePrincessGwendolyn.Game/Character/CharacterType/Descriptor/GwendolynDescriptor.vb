@@ -13,13 +13,11 @@
             {CharacterStatisticType.Anxiety, 0},
             {CharacterStatisticType.Confidence, 10},
             {CharacterStatisticType.Ennui, 0},
-            {CharacterStatisticType.Enthusiasm, 5}
+            {CharacterStatisticType.Enthusiasm, 10}
         }
 
     Friend Overrides Sub OnCreate(character As Character)
-        For Each statistic In statistics
-            CharacterStatisticData.Write(character.Id, statistic.Key, statistic.Value)
-        Next
+        InitializeStatistics(character, statistics)
         DetermineDanceSkills(character)
     End Sub
 
