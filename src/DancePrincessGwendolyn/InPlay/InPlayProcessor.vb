@@ -18,10 +18,12 @@
             Next
 
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
-            If location.NonPlayerCharacters.Any Then
+            If character.CanDoDanceOff Then
                 prompt.AddChoice(DanceOffText)
             End If
-            prompt.AddChoice(MoveText)
+            If character.Confidence > 0 Then
+                prompt.AddChoice(MoveText)
+            End If
             prompt.AddChoice(ProfileText)
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)

@@ -36,6 +36,10 @@ Module DoDanceMoveProcessor
                 OkPrompt()
                 Return True
             End If
+            Dim route = RNG.FromEnumerable(reactor.Location.Routes)
+            AnsiConsole.MarkupLine($"{reactor.Name} goes to {route.DestinationLocation.Name} to recover.")
+            reactor.Location = route.DestinationLocation
+            OkPrompt()
             Return True
         End If
         OkPrompt()

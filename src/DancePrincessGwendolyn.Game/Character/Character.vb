@@ -30,6 +30,12 @@
         Return RNG.FromGenerator(table)
     End Function
 
+    Public ReadOnly Property CanDoDanceOff As Boolean
+        Get
+            Return Confidence > 0 AndAlso Location.NonPlayerCharacters.Any
+        End Get
+    End Property
+
     Public Shared Function FromId(characterId As Long?) As Character
         If Not characterId.HasValue Then
             Return Nothing
