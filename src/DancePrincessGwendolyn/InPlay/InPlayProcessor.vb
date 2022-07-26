@@ -24,6 +24,9 @@
             If character.Confidence > 0 Then
                 prompt.AddChoice(MoveText)
             End If
+            If character.CanVisitLifeCoach Then
+                prompt.AddChoice(VisitLifeCoachText)
+            End If
             prompt.AddChoice(ProfileText)
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
@@ -35,6 +38,8 @@
                     ProfileProcessor.Run()
                 Case DanceOffText
                     DanceOffProcessor.Run()
+                Case VisitLifeCoachText
+                    LifeCoachProcessor.Run()
             End Select
         End While
     End Sub

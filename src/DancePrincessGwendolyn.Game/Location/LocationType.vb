@@ -17,4 +17,8 @@ Public Module LocationTypeExtensions
     Sub OnRefresh(locationType As LocationType, location As Location)
         LocationTypeDescriptors(locationType).OnRefresh(location)
     End Sub
+    <Extension>
+    Function HasLifeCoach(locationType As LocationType) As Boolean
+        Return LocationTypeDescriptors(locationType).HasLifeCoach
+    End Function
 End Module

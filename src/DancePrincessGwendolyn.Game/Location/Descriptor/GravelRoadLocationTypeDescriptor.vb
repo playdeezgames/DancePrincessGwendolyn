@@ -7,6 +7,12 @@
         End Get
     End Property
 
+    Public Overrides ReadOnly Property HasLifeCoach As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+
     Private ReadOnly Rivals As IReadOnlyList(Of CharacterType) =
         New List(Of CharacterType) From
         {

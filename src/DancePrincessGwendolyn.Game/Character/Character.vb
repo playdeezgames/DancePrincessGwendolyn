@@ -4,6 +4,10 @@
         Id = characterId
     End Sub
 
+    Public Sub RestoreConfidence()
+        SetStatistic(CharacterStatisticType.Anxiety, 0)
+    End Sub
+
     Public Property Location As Location
         Get
             Return Location.FromId(CharacterData.ReadLocation(Id))
@@ -15,6 +19,10 @@
             End If
         End Set
     End Property
+
+    Public Sub RestoreUses(danceStyle As DanceStyle)
+        SetStatistic(danceStyle.UsageStatisticType, 0)
+    End Sub
 
     Public Function PickRandomDanceStyle() As DanceStyle
         Dim table As New Dictionary(Of DanceStyle, Integer)
@@ -33,6 +41,12 @@
     Public ReadOnly Property CanDoDanceOff As Boolean
         Get
             Return Confidence > 0 AndAlso Location.NonPlayerCharacters.Any
+        End Get
+    End Property
+
+    Public ReadOnly Property CanVisitLifeCoach As Boolean
+        Get
+            Return Confidence < 1 AndAlso Location.HasLifeCoach
         End Get
     End Property
 

@@ -42,6 +42,13 @@ Public Class Location
             LocationDanceStyleData.Clear(Id)
         End Set
     End Property
+
+    Friend ReadOnly Property HasLifeCoach As Boolean
+        Get
+            Return LocationType.HasLifeCoach
+        End Get
+    End Property
+
     Public ReadOnly Property Name As String
         Get
             Select Case LocationType

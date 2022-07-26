@@ -11,5 +11,6 @@
     Friend Const QuitText = "Quit"
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
+    Friend Const VisitLifeCoachText = "Visit Life Coach"
     Friend Const YesText = "Yes"
 End Module
