@@ -33,4 +33,11 @@
             (CharacterIdColumn, characterId),
             (StatisticTypeColumn, statisticType))
     End Function
+
+    Friend Sub ClearForCharacter(characterId As Long)
+        ClearForColumnValue(
+            AddressOf Initialize,
+            TableName,
+            (CharacterIdColumn, characterId))
+    End Sub
 End Module

@@ -11,7 +11,7 @@
         New Dictionary(Of CharacterStatisticType, Long) From
         {
             {CharacterStatisticType.Anxiety, 0},
-            {CharacterStatisticType.Confidence, 1},
+            {CharacterStatisticType.Confidence, 5},
             {CharacterStatisticType.Ennui, 0},
             {CharacterStatisticType.Enthusiasm, 0}
         }

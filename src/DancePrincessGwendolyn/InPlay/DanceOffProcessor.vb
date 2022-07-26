@@ -20,6 +20,8 @@
             Select Case answer
                 Case GiveUpText
                     done = True
+                Case Else
+                    done = DoDanceMoveProcessor.Run(table(answer))
             End Select
         End While
     End Sub

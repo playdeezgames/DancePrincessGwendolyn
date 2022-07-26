@@ -48,6 +48,14 @@
             (LocationIdColumn, locationId))
     End Function
 
+    Public Sub Clear(characterId As Long)
+        CharacterStatisticData.ClearForCharacter(characterId)
+        ClearForColumnValue(
+            AddressOf Initialize,
+            TableName,
+            (CharacterIdColumn, characterId))
+    End Sub
+
     Public Function ForLocation(locationId As Long) As IEnumerable(Of Long)
         Return ReadRecordsWithColumnValue(Of Long, Long)(
             AddressOf Initialize,
