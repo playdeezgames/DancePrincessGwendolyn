@@ -9,6 +9,12 @@ Public Enum CharacterType
     HipHopN00b
     LineDancingN00b
     TapDancingN00b
+    BalletStudent
+    BollywoodStudent
+    CheerleadingStudent
+    HipHopStudent
+    LineDancingStudent
+    TapDancingStudent
 End Enum
 Public Module CharacterTypeExtensions
     <Extension>

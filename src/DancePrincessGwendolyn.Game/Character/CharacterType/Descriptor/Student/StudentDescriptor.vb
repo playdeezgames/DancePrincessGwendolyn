@@ -1,4 +1,4 @@
-﻿Friend Class N00bDescriptor
+﻿Friend Class StudentDescriptor
     Inherits CharacterTypeDescriptor
 
     Private ReadOnly DanceStyle As DanceStyle
@@ -13,10 +13,10 @@
         New Dictionary(Of CharacterStatisticType, Long) From
         {
             {CharacterStatisticType.Anxiety, 0},
-            {CharacterStatisticType.Confidence, 5},
+            {CharacterStatisticType.Confidence, 10},
             {CharacterStatisticType.Ennui, 0},
             {CharacterStatisticType.Enthusiasm, 0},
-            {CharacterStatisticType.Sparkle, 5}
+            {CharacterStatisticType.Sparkle, 10}
         }
 
 
@@ -27,8 +27,8 @@
 
     Private Sub DetermineDanceSkills(character As Character)
         For Each style In AllDanceStyles
-            Dim value = If(style = DanceStyle, 10, 4)
-            Dim maximumUses = If(style = DanceStyle, 24, 1)
+            Dim value = If(style = DanceStyle, 12, 6)
+            Dim maximumUses = If(style = DanceStyle, 20, 2)
             CharacterStatisticData.Write(character.Id, style.CharacterStatisticType, value)
             CharacterStatisticData.Write(character.Id, style.MaximumUsageStatisticType, maximumUses)
             CharacterStatisticData.Write(character.Id, style.UsageStatisticType, 0)
@@ -36,6 +36,6 @@
     End Sub
 
     Friend Overrides Function RollDefeatBux(character As Character) As Long
-        Return CLng(RNG.RollDice("2d6"))
+        Return CLng(RNG.RollDice("4d6"))
     End Function
 End Class

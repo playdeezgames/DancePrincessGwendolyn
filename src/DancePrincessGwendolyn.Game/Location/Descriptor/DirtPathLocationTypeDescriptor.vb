@@ -13,7 +13,20 @@
         End Get
     End Property
 
-    Friend Overrides Sub OnRefresh(location As Location)
+    Private ReadOnly Rivals As IReadOnlyList(Of CharacterType) =
+        New List(Of CharacterType) From
+        {
+            CharacterType.BalletStudent,
+            CharacterType.BollywoodStudent,
+            CharacterType.CheerleadingStudent,
+            CharacterType.HipHopStudent,
+            CharacterType.LineDancingStudent,
+            CharacterType.TapDancingStudent
+        }
 
+    Friend Overrides Sub OnRefresh(location As Location)
+        If Not location.NonPlayerCharacters.Any Then
+            Character.Create(RNG.FromEnumerable(Rivals), location)
+        End If
     End Sub
 End Class

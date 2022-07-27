@@ -21,7 +21,7 @@
         Dim danceStyles = AllDanceStyles.Where(Function(x) RemainingUses(x) < TotalUses(x))
         If danceStyles.Any Then
             style = RNG.FromEnumerable(danceStyles)
-            SetStatistic(style.UsageStatisticType, 0)
+            SetStatistic(style.UsageStatisticType, GetStatistic(style.UsageStatisticType).Value \ 2)
         End If
         Return (confidenceRestored, style)
     End Function

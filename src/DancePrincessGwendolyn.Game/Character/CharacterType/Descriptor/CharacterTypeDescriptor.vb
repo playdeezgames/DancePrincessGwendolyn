@@ -13,11 +13,17 @@ Friend Module CharacterTypeDescriptorUtility
         New Dictionary(Of CharacterType, CharacterTypeDescriptor) From
         {
             {CharacterType.BalletN00b, New BalletN00bDescriptor},
+            {CharacterType.BalletStudent, New BalletStudentDescriptor},
             {CharacterType.BollywoodN00b, New BollywoodN00bDescriptor},
+            {CharacterType.BollywoodStudent, New BollywoodStudentDescriptor},
             {CharacterType.CheerleadingN00b, New CheerleadingN00bDescriptor},
+            {CharacterType.CheerleadingStudent, New CheerleadingStudentDescriptor},
             {CharacterType.Gwendolyn, New GwendolynDescriptor},
             {CharacterType.HipHopN00b, New HipHopN00bDescriptor},
+            {CharacterType.HipHopStudent, New HipHopStudentDescriptor},
             {CharacterType.LineDancingN00b, New LineDancingN00bDescriptor},
-            {CharacterType.TapDancingN00b, New TapDancingN00bDescriptor}
+            {CharacterType.LineDancingStudent, New LineDancingStudentDescriptor},
+            {CharacterType.TapDancingN00b, New TapDancingN00bDescriptor},
+            {CharacterType.TapDancingStudent, New TapDancingStudentDescriptor}
         }
 End Module
