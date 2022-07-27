@@ -26,6 +26,17 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public Sub TrainConfidence()
+        If CanTrainConfidence Then
+            AddSparkle(-ConfidenceTrainingCost)
+            AddConfidence(1)
+        End If
+    End Sub
+
+    Private Sub AddConfidence(delta As Long)
+        ChangeStatistic(CharacterStatisticType.Confidence, delta)
+    End Sub
+
     Private Sub AddEnnui(delta As Long)
         ChangeStatistic(CharacterStatisticType.Ennui, delta)
     End Sub
@@ -40,6 +51,20 @@
                 CharacterData.WriteLocation(Id, value.Id)
             End If
         End Set
+    End Property
+
+    Private Const ConfidenceTrainingMultiplier As Long = 10
+
+    Public ReadOnly Property CanTrainConfidence As Boolean
+        Get
+            Return Sparkle >= ConfidenceTrainingCost
+        End Get
+    End Property
+
+    Public ReadOnly Property ConfidenceTrainingCost As Long
+        Get
+            Return MaximumConfidence * ConfidenceTrainingMultiplier
+        End Get
     End Property
 
     Public Sub AddSparkle(delta As Long)

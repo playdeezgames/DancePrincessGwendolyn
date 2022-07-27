@@ -25,6 +25,9 @@
             If character.CanRecover Then
                 prompt.AddChoice(RecoverText)
             End If
+            If character.CanTrainConfidence Then
+                prompt.AddChoice(VisitConfidenceTrainerText)
+            End If
             If character.CanVisitLifeCoach Then
                 prompt.AddChoice(VisitLifeCoachText)
             End If
@@ -43,6 +46,8 @@
                     LifeCoachProcessor.Run()
                 Case RecoverText
                     RecoverProcessor.Run()
+                Case VisitConfidenceTrainerText
+                    ConfidenceTrainerProcessor.Run()
             End Select
         End While
     End Sub
