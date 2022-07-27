@@ -5,7 +5,7 @@ Module DoDanceMoveProcessor
         Dim player = World.PlayerCharacter
         Dim rival = player.Location.NonPlayerCharacters.First
         AnsiConsole.Clear()
-        AnsiConsole.MarkupLine($"You do a {danceStyle.Name} move!")
+        AnsiConsole.MarkupLine($"{player.Name} does a {danceStyle.Name} move!")
         Dim playerRoll As Long = DoPlayerRoll(danceStyle, player)
         Dim rivalStyle = rival.PickRandomDanceStyle
         Select Case rivalStyle
@@ -63,6 +63,7 @@ Module DoDanceMoveProcessor
             done = True
             Dim roll = RNG.RollDice($"1d{dieSize}")
             total += roll
+            AnsiConsole.MarkupLine($"{rival.Name} does a {danceStyle.Name} move!")
             AnsiConsole.MarkupLine($"{rival.Name} rolls a {roll} for a total of {total}!")
             If dieSize = roll Then
                 AnsiConsole.MarkupLine($"Maximum roll! The die explodes and {rival.Name} gets to re-roll!")
@@ -81,9 +82,9 @@ Module DoDanceMoveProcessor
             done = True
             Dim roll = RNG.RollDice($"1d{dieSize}")
             playerTotal += roll
-            AnsiConsole.MarkupLine($"You roll a {roll} for a total of {playerTotal}!")
+            AnsiConsole.MarkupLine($"{player.Name} rolls a {roll} for a total of {playerTotal}!")
             If dieSize = roll Then
-                AnsiConsole.MarkupLine("Maximum roll! The die explodes and you get to re-roll!")
+                AnsiConsole.MarkupLine($"Maximum roll! The die explodes and {player.Name} gets to re-roll!")
                 done = False
             End If
         Loop Until done

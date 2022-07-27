@@ -5,7 +5,7 @@
             Dim player = World.PlayerCharacter
             Dim rival = player.Location.NonPlayerCharacters.First
             AnsiConsole.Clear()
-            AnsiConsole.MarkupLine($"You are having a DANCE OFF with {rival.Name}!")
+            AnsiConsole.MarkupLine($"{player.Name} is having a DANCE OFF with {rival.Name}!")
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now what?[/]"}
             Dim table As New Dictionary(Of String, DanceStyle)
             For Each style In AllDanceStyles
