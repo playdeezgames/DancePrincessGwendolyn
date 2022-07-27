@@ -8,6 +8,7 @@ Friend Module CharacterStatisticTypeDescriptorUtility
         New Dictionary(Of CharacterStatisticType, CharacterStatisticTypeDescriptor) From
         {
             {CharacterStatisticType.Anxiety, New AnxietyDescriptor},
+            {CharacterStatisticType.Bux, New BuxDescriptor},
             {CharacterStatisticType.Confidence, New ConfidenceDescriptor},
             {CharacterStatisticType.Ennui, New EnnuiDescriptor},
             {CharacterStatisticType.Enthusiasm, New EnthusiasmDescriptor},
@@ -26,6 +27,7 @@ Friend Module CharacterStatisticTypeDescriptorUtility
             {CharacterStatisticType.LineDancingSkill, New LineDancingSkillDescriptor},
             {CharacterStatisticType.LineDancingSkillUses, New LineDancingSkillUsesDescriptor},
             {CharacterStatisticType.LineDancingSkillMaximumUses, New LineDancingSkillMaximumUsesDescriptor},
+            {CharacterStatisticType.Sparkle, New SparkleDescriptor},
             {CharacterStatisticType.TapDancingSkill, New TapDancingSkillDescriptor},
             {CharacterStatisticType.TapDancingSkillUses, New TapDancingSkillUsesDescriptor},
             {CharacterStatisticType.TapDancingSkillMaximumUses, New TapDancingSkillMaximumUsesDescriptor}

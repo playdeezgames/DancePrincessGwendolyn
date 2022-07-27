@@ -24,6 +24,8 @@ Public Enum CharacterStatisticType
     HipHopSkillMaximumUses
     LineDancingSkillMaximumUses
     TapDancingSkillMaximumUses
+    Sparkle
+    Bux
 End Enum
 Public Module CharacterStatisticTypeExtensions
     <Extension>

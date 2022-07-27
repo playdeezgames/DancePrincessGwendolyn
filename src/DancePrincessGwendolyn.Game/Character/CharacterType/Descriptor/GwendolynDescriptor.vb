@@ -13,7 +13,9 @@
             {CharacterStatisticType.Anxiety, 0},
             {CharacterStatisticType.Confidence, 10},
             {CharacterStatisticType.Ennui, 0},
-            {CharacterStatisticType.Enthusiasm, 10}
+            {CharacterStatisticType.Enthusiasm, 10},
+            {CharacterStatisticType.Bux, 0},
+            {CharacterStatisticType.Sparkle, 0}
         }
 
     Friend Overrides Sub OnCreate(character As Character)

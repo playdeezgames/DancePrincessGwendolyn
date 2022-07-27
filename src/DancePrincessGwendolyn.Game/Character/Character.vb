@@ -122,6 +122,18 @@
         End Get
     End Property
 
+    Public ReadOnly Property Bux As Long
+        Get
+            Return GetStatistic(CharacterStatisticType.Bux).Value
+        End Get
+    End Property
+
+    Public ReadOnly Property Sparkle As Long
+        Get
+            Return GetStatistic(CharacterStatisticType.Sparkle).Value
+        End Get
+    End Property
+
     Public ReadOnly Property MaximumConfidence As Long
         Get
             Return GetStatistic(CharacterStatisticType.Confidence).Value
