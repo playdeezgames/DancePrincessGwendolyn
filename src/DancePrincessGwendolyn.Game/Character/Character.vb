@@ -8,6 +8,28 @@
         SetStatistic(CharacterStatisticType.Anxiety, 0)
     End Sub
 
+    Public Function Recover() As (Boolean, DanceStyle)
+        If Not CanRecover Then
+            Return (False, DanceStyle.None)
+        End If
+        AddEnnui(1)
+        Dim confidenceRestored As Boolean = Confidence < MaximumConfidence
+        If confidenceRestored Then
+            AddAnxiety(-1)
+        End If
+        Dim style = DanceStyle.None
+        Dim danceStyles = AllDanceStyles.Where(Function(x) RemainingUses(x) < TotalUses(x))
+        If danceStyles.Any Then
+            style = RNG.FromEnumerable(danceStyles)
+            SetStatistic(style.UsageStatisticType, 0)
+        End If
+        Return (confidenceRestored, style)
+    End Function
+
+    Private Sub AddEnnui(delta As Long)
+        ChangeStatistic(CharacterStatisticType.Ennui, delta)
+    End Sub
+
     Public Property Location As Location
         Get
             Return Location.FromId(CharacterData.ReadLocation(Id))
@@ -37,6 +59,12 @@
         End If
         Return RNG.FromGenerator(table)
     End Function
+
+    Public ReadOnly Property CanRecover As Boolean
+        Get
+            Return Enthusiasm > 0 AndAlso (Confidence < MaximumConfidence OrElse AllDanceStyles.Any(Function(x) GetStatistic(x.UsageStatisticType).Value > 0))
+        End Get
+    End Property
 
     Public ReadOnly Property CanDoDanceOff As Boolean
         Get
@@ -131,6 +159,9 @@
     End Sub
 
     Private Sub SetStatistic(statisticType As CharacterStatisticType, value As Long)
+        Dim minimum = statisticType.Minimum(Me)
+        Dim maximum = statisticType.Maximum(Me)
+        value = Math.Max(Math.Min(value, maximum), minimum)
         CharacterStatisticData.Write(Id, statisticType, value)
     End Sub
 

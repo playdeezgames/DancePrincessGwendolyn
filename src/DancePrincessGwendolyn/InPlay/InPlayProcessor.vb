@@ -22,6 +22,9 @@
                 prompt.AddChoice(DanceOffText)
             End If
             prompt.AddChoice(MoveText)
+            If character.CanRecover Then
+                prompt.AddChoice(RecoverText)
+            End If
             If character.CanVisitLifeCoach Then
                 prompt.AddChoice(VisitLifeCoachText)
             End If
@@ -38,6 +41,8 @@
                     DanceOffProcessor.Run()
                 Case VisitLifeCoachText
                     LifeCoachProcessor.Run()
+                Case RecoverText
+                    RecoverProcessor.Run()
             End Select
         End While
     End Sub

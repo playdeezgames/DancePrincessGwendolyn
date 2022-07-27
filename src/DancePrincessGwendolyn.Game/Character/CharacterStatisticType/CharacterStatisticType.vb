@@ -30,4 +30,12 @@ Public Module CharacterStatisticTypeExtensions
     Public Function Name(statisticType As CharacterStatisticType) As String
         Return CharacterStatisticTypeDescriptors(statisticType).Name
     End Function
+    <Extension>
+    Public Function Minimum(statisticType As CharacterStatisticType, character As Character) As Long
+        Return CharacterStatisticTypeDescriptors(statisticType).Minimum(character)
+    End Function
+    <Extension>
+    Public Function Maximum(statisticType As CharacterStatisticType, character As Character) As Long
+        Return CharacterStatisticTypeDescriptors(statisticType).Maximum(character)
+    End Function
 End Module

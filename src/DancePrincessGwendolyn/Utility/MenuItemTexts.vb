@@ -9,6 +9,7 @@
     Friend Const NoText = "No"
     Friend Const ProfileText = "Profile"
     Friend Const QuitText = "Quit"
+    Friend Const RecoverText = "Recover"
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
     Friend Const VisitLifeCoachText = "Visit Life Coach"

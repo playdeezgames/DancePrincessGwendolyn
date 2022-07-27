@@ -1,5 +1,7 @@
 ﻿Friend MustInherit Class CharacterStatisticTypeDescriptor
     MustOverride ReadOnly Property Name As String
+    MustOverride Function Minimum(character As Character) As Long
+    MustOverride Function Maximum(character As Character) As Long
 End Class
 Friend Module CharacterStatisticTypeDescriptorUtility
     Friend ReadOnly CharacterStatisticTypeDescriptors As IReadOnlyDictionary(Of CharacterStatisticType, CharacterStatisticTypeDescriptor) =
