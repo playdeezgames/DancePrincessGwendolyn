@@ -1,5 +1,6 @@
 ﻿Friend Class N00bDescriptor
     Inherits CharacterTypeDescriptor
+
     Private ReadOnly DanceStyle As DanceStyle
 
     Friend Overrides ReadOnly Property Name As String
@@ -14,7 +15,8 @@
             {CharacterStatisticType.Anxiety, 0},
             {CharacterStatisticType.Confidence, 5},
             {CharacterStatisticType.Ennui, 0},
-            {CharacterStatisticType.Enthusiasm, 0}
+            {CharacterStatisticType.Enthusiasm, 0},
+            {CharacterStatisticType.Sparkle, 5}
         }
 
 
@@ -33,4 +35,7 @@
         Next
     End Sub
 
+    Friend Overrides Function RollDefeatBux(character As Character) As Long
+        Return CLng(RNG.RollDice("2d6"))
+    End Function
 End Class

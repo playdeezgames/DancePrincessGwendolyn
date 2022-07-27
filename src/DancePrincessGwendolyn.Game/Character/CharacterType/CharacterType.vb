@@ -19,4 +19,8 @@ Public Module CharacterTypeExtensions
     Sub OnCreate(characterType As CharacterType, character As Character)
         CharacterTypeDescriptors(characterType).OnCreate(character)
     End Sub
+    <Extension>
+    Function RollDefeatBux(characterType As CharacterType, character As Character) As Long
+        Return CharacterTypeDescriptors(characterType).RollDefeatBux(character)
+    End Function
 End Module

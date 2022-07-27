@@ -39,4 +39,8 @@
             CharacterStatisticData.Write(character.Id, style.UsageStatisticType, 0)
         Next
     End Sub
+
+    Friend Overrides Function RollDefeatBux(character As Character) As Long
+        Return RNG.FromRange(CInt(character.Bux \ 6), CInt(character.Bux \ 3))
+    End Function
 End Class

@@ -42,6 +42,18 @@
         End Set
     End Property
 
+    Public Sub AddSparkle(delta As Long)
+        SetStatistic(CharacterStatisticType.Sparkle, GetStatistic(CharacterStatisticType.Sparkle).Value + delta)
+    End Sub
+
+    Public Sub AddBux(delta As Long)
+        SetStatistic(CharacterStatisticType.Bux, GetStatistic(CharacterStatisticType.Bux).Value + delta)
+    End Sub
+
+    Public Function RollDefeatBux() As Long
+        Return CharacterType.RollDefeatBux(Me)
+    End Function
+
     Public Sub RestoreUses(danceStyle As DanceStyle)
         SetStatistic(danceStyle.UsageStatisticType, 0)
     End Sub

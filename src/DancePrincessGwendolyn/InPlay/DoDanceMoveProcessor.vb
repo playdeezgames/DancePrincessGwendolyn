@@ -19,23 +19,36 @@ Module DoDanceMoveProcessor
                     Return False
                 End If
                 If playerRoll > rivalRoll Then
-                    Return HandleReaction(rival, playerRoll \ rivalRoll)
+                    Return HandleReaction(rival, playerRoll \ rivalRoll, AddressOf RivalDefeat)
                 End If
-                Return HandleReaction(player, rivalRoll \ playerRoll)
+                Return HandleReaction(player, rivalRoll \ playerRoll, AddressOf PlayerDefeat)
         End Select
     End Function
 
-    Private Function HandleReaction(reactor As Character, anxiety As Long) As Boolean
+    Private Sub RivalDefeat(character As Character)
+        Dim player = World.PlayerCharacter
+        Dim sparkle = character.Sparkle
+        player.AddSparkle(sparkle)
+        AnsiConsole.MarkupLine($"{player.Name} receives {sparkle} sparkle, and now has a total of {player.Sparkle} sparkle!")
+        Dim bux As Long = character.RollDefeatBux
+        player.AddBux(bux)
+        AnsiConsole.MarkupLine($"{player.Name} receives {bux} bux, and now has a total of {player.Bux} bux!")
+        character.Destroy()
+    End Sub
+
+    Private Sub PlayerDefeat(player As Character)
+        Dim bux As Long = player.RollDefeatBux
+        player.AddBux(-bux)
+        AnsiConsole.MarkupLine($"{player.Name} loses {bux} bux, and now has a total of {player.Bux} bux!")
+    End Sub
+
+    Private Function HandleReaction(reactor As Character, anxiety As Long, onDefeat As Action(Of Character)) As Boolean
         AnsiConsole.MarkupLine($"{reactor.Name} loses {anxiety} confidence!")
         reactor.AddAnxiety(anxiety)
         AnsiConsole.MarkupLine($"{reactor.Name} has {reactor.Confidence} confidence remaining!")
         If reactor.Confidence < 1 Then
             AnsiConsole.MarkupLine($"{reactor.Name} has been defeated!")
-            If Not reactor.IsPlayer Then
-                reactor.Destroy()
-                OkPrompt()
-                Return True
-            End If
+            onDefeat(reactor)
             OkPrompt()
             Return True
         End If

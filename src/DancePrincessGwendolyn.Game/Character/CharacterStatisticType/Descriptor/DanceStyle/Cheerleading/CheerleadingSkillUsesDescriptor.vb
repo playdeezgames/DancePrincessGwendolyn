@@ -8,10 +8,10 @@
     End Property
 
     Public Overrides Function Minimum(character As Character) As Long
-        Return 4
+        Return 0
     End Function
 
     Public Overrides Function Maximum(character As Character) As Long
-        Return Long.MaxValue
+        Return character.GetStatistic(CharacterStatisticType.CheerleadingSkillMaximumUses).Value
     End Function
 End Class

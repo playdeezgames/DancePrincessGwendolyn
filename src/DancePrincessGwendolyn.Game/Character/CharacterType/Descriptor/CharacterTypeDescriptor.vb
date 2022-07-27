@@ -6,6 +6,7 @@
         Next
     End Sub
     Friend MustOverride Sub OnCreate(character As Character)
+    Friend MustOverride Function RollDefeatBux(character As Character) As Long
 End Class
 Friend Module CharacterTypeDescriptorUtility
     Friend ReadOnly CharacterTypeDescriptors As IReadOnlyDictionary(Of CharacterType, CharacterTypeDescriptor) =
