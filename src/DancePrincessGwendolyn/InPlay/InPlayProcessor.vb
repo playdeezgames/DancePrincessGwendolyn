@@ -21,9 +21,7 @@
             If character.CanDoDanceOff Then
                 prompt.AddChoice(DanceOffText)
             End If
-            If character.Confidence > 0 Then
-                prompt.AddChoice(MoveText)
-            End If
+            prompt.AddChoice(MoveText)
             If character.CanVisitLifeCoach Then
                 prompt.AddChoice(VisitLifeCoachText)
             End If
