@@ -7,7 +7,7 @@
             AnsiConsole.MarkupLine($"{character.Name} now has {character.Confidence} confidence!")
         End If
         If result.Item2 <> DanceStyle.None Then
-            AnsiConsole.MarkupLine($"{character.Name} recovers all uses of {result.Item2.Name}!")
+            AnsiConsole.MarkupLine($"{character.Name} recovers some uses of {result.Item2.Name}!")
         End If
         OkPrompt()
     End Sub

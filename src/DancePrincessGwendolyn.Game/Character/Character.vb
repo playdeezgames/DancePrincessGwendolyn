@@ -40,6 +40,20 @@
         End If
     End Sub
 
+    Public Sub TrainDanceStyleSkill(danceStyle As DanceStyle)
+        If CanTrainDanceStyle(danceStyle) Then
+            AddSparkle(-DanceStyleTrainingCost(danceStyle))
+            SetStatistic(danceStyle.CharacterStatisticType, GetStatistic(danceStyle.CharacterStatisticType).Value + 1)
+        End If
+    End Sub
+
+    Public Sub TrainDanceStyleUse(danceStyle As DanceStyle)
+        If CanTrainDanceStyle(danceStyle) Then
+            AddSparkle(-DanceStyleTrainingCost(danceStyle))
+            SetStatistic(danceStyle.MaximumUsageStatisticType, GetStatistic(danceStyle.MaximumUsageStatisticType).Value + 1)
+        End If
+    End Sub
+
     Private Sub AddConfidence(delta As Long)
         ChangeStatistic(CharacterStatisticType.Confidence, delta)
     End Sub

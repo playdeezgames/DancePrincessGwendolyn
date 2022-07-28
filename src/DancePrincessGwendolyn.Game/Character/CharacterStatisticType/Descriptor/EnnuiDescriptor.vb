@@ -12,6 +12,6 @@
     End Function
 
     Public Overrides Function Maximum(character As Character) As Long
-        Return character.Enthusiasm
+        Return character.MaximumEnthusiasm
     End Function
 End Class

@@ -72,11 +72,11 @@ Module DoDanceMoveProcessor
         Dim dieSize = rival.DanceSkills(danceStyle)
         Dim done = True
         rival.AddUse(danceStyle)
+        AnsiConsole.MarkupLine($"{rival.Name} does a {danceStyle.Name} move!")
         Do
             done = True
             Dim roll = RNG.RollDice($"1d{dieSize}")
             total += roll
-            AnsiConsole.MarkupLine($"{rival.Name} does a {danceStyle.Name} move!")
             AnsiConsole.MarkupLine($"{rival.Name} rolls a {roll} for a total of {total}!")
             If dieSize = roll Then
                 AnsiConsole.MarkupLine($"Maximum roll! The die explodes and {rival.Name} gets to re-roll!")

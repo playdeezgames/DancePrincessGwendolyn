@@ -35,7 +35,7 @@
                 prompt.AddChoice(VisitLifeCoachText)
             End If
             Dim danceStyle = location.DanceStyle
-            If danceStyle.HasValue Then
+            If danceStyle.HasValue AndAlso danceStyle <> Game.DanceStyle.None Then
                 If character.CanTrainDanceStyle(danceStyle.Value) Then
                     prompt.AddChoice(VisitDanceStyleTrainerText(danceStyle.Value))
                 End If
