@@ -15,6 +15,12 @@ Public Enum CharacterType
     HipHopStudent
     LineDancingStudent
     TapDancingStudent
+    BalletDiva
+    BollywoodDiva
+    CheerleadingDiva
+    HipHopPlaya
+    LineDancingDiva
+    TapDancingDiva
 End Enum
 Public Module CharacterTypeExtensions
     <Extension>

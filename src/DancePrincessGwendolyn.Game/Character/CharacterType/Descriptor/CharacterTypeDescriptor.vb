@@ -12,17 +12,23 @@ Friend Module CharacterTypeDescriptorUtility
     Friend ReadOnly CharacterTypeDescriptors As IReadOnlyDictionary(Of CharacterType, CharacterTypeDescriptor) =
         New Dictionary(Of CharacterType, CharacterTypeDescriptor) From
         {
+            {CharacterType.BalletDiva, New BalletDivaDescriptor},
             {CharacterType.BalletN00b, New BalletN00bDescriptor},
             {CharacterType.BalletStudent, New BalletStudentDescriptor},
+            {CharacterType.BollywoodDiva, New BollywoodDivaDescriptor},
             {CharacterType.BollywoodN00b, New BollywoodN00bDescriptor},
             {CharacterType.BollywoodStudent, New BollywoodStudentDescriptor},
+            {CharacterType.CheerleadingDiva, New CheerleadingDivaDescriptor},
             {CharacterType.CheerleadingN00b, New CheerleadingN00bDescriptor},
             {CharacterType.CheerleadingStudent, New CheerleadingStudentDescriptor},
             {CharacterType.Gwendolyn, New GwendolynDescriptor},
             {CharacterType.HipHopN00b, New HipHopN00bDescriptor},
+            {CharacterType.HipHopPlaya, New HipHopPlayaDescriptor},
             {CharacterType.HipHopStudent, New HipHopStudentDescriptor},
+            {CharacterType.LineDancingDiva, New LineDancingDivaDescriptor},
             {CharacterType.LineDancingN00b, New LineDancingN00bDescriptor},
             {CharacterType.LineDancingStudent, New LineDancingStudentDescriptor},
+            {CharacterType.TapDancingDiva, New TapDancingDivaDescriptor},
             {CharacterType.TapDancingN00b, New TapDancingN00bDescriptor},
             {CharacterType.TapDancingStudent, New TapDancingStudentDescriptor}
         }
