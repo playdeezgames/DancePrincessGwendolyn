@@ -13,6 +13,7 @@
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
     Friend Const VisitConfidenceTrainerText = "Visit Confidence Trainer"
+    Friend Const VisitEnthusiasmTrainerText = "Visit Enthusiasm Trainer"
     Friend Const VisitLifeCoachText = "Visit Life Coach"
     Friend Const YesText = "Yes"
 End Module

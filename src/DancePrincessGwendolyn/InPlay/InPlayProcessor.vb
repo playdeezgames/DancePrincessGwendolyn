@@ -28,6 +28,9 @@
             If character.CanTrainConfidence Then
                 prompt.AddChoice(VisitConfidenceTrainerText)
             End If
+            If character.CanTrainEnthusiasm Then
+                prompt.AddChoice(VisitEnthusiasmTrainerText)
+            End If
             If character.CanVisitLifeCoach Then
                 prompt.AddChoice(VisitLifeCoachText)
             End If
@@ -48,6 +51,8 @@
                     RecoverProcessor.Run()
                 Case VisitConfidenceTrainerText
                     ConfidenceTrainerProcessor.Run()
+                Case VisitEnthusiasmTrainerText
+                    EnthusiasmTrainerProcessor.Run()
             End Select
         End While
     End Sub

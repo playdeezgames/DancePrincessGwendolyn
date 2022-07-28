@@ -33,8 +33,19 @@
         End If
     End Sub
 
+    Public Sub TrainEnthusiasm()
+        If CanTrainEnthusiasm Then
+            AddSparkle(-EnthusiasmTrainingCost)
+            AddEnthusiasm(1)
+        End If
+    End Sub
+
     Private Sub AddConfidence(delta As Long)
         ChangeStatistic(CharacterStatisticType.Confidence, delta)
+    End Sub
+
+    Private Sub AddEnthusiasm(delta As Long)
+        ChangeStatistic(CharacterStatisticType.Enthusiasm, delta)
     End Sub
 
     Private Sub AddEnnui(delta As Long)
@@ -54,6 +65,7 @@
     End Property
 
     Private Const ConfidenceTrainingMultiplier As Long = 10
+    Private Const EnthusiasmTrainingMultiplier As Long = 10
 
     Public ReadOnly Property CanTrainConfidence As Boolean
         Get
@@ -61,9 +73,21 @@
         End Get
     End Property
 
+    Public ReadOnly Property CanTrainEnthusiasm As Boolean
+        Get
+            Return Sparkle >= EnthusiasmTrainingCost
+        End Get
+    End Property
+
     Public ReadOnly Property ConfidenceTrainingCost As Long
         Get
             Return MaximumConfidence * ConfidenceTrainingMultiplier
+        End Get
+    End Property
+
+    Public ReadOnly Property EnthusiasmTrainingCost As Long
+        Get
+            Return MaximumEnthusiasm * EnthusiasmTrainingMultiplier
         End Get
     End Property
 
