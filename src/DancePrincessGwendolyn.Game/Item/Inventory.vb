@@ -11,4 +11,9 @@
             Return True
         End Get
     End Property
+    Public ReadOnly Property Items As IEnumerable(Of Item)
+        Get
+            Return InventoryItemData.Read(Id).Select(Function(x) Item.FromId(x))
+        End Get
+    End Property
 End Class
