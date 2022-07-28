@@ -34,6 +34,12 @@
             If character.CanVisitLifeCoach Then
                 prompt.AddChoice(VisitLifeCoachText)
             End If
+            Dim danceStyle = location.DanceStyle
+            If danceStyle.HasValue Then
+                If character.CanTrainDanceStyle(danceStyle.Value) Then
+                    prompt.AddChoice(VisitDanceStyleTrainerText(danceStyle.Value))
+                End If
+            End If
             prompt.AddChoice(ProfileText)
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
@@ -53,6 +59,18 @@
                     ConfidenceTrainerProcessor.Run()
                 Case VisitEnthusiasmTrainerText
                     EnthusiasmTrainerProcessor.Run()
+                Case VisitDanceStyleTrainerText(Game.DanceStyle.Ballet)
+                    DanceStyleTrainerProcessor.Run(Game.DanceStyle.Ballet)
+                Case VisitDanceStyleTrainerText(Game.DanceStyle.Bollywood)
+                    DanceStyleTrainerProcessor.Run(Game.DanceStyle.Bollywood)
+                Case VisitDanceStyleTrainerText(Game.DanceStyle.Cheerleading)
+                    DanceStyleTrainerProcessor.Run(Game.DanceStyle.Cheerleading)
+                Case VisitDanceStyleTrainerText(Game.DanceStyle.HipHop)
+                    DanceStyleTrainerProcessor.Run(Game.DanceStyle.HipHop)
+                Case VisitDanceStyleTrainerText(Game.DanceStyle.LineDancing)
+                    DanceStyleTrainerProcessor.Run(Game.DanceStyle.LineDancing)
+                Case VisitDanceStyleTrainerText(Game.DanceStyle.TapDancing)
+                    DanceStyleTrainerProcessor.Run(Game.DanceStyle.TapDancing)
             End Select
         End While
     End Sub

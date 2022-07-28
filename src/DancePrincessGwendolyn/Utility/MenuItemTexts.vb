@@ -13,6 +13,16 @@
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
     Friend Const VisitConfidenceTrainerText = "Visit Confidence Trainer"
+    Friend ReadOnly VisitDanceStyleTrainerText As IReadOnlyDictionary(Of DanceStyle, String) =
+        New Dictionary(Of DanceStyle, String) From
+        {
+            {DanceStyle.Ballet, "Visit Ballet Trainer"},
+            {DanceStyle.Bollywood, "Visit Bollywood Trainer"},
+            {DanceStyle.Cheerleading, "Visit Cheerleading Trainer"},
+            {DanceStyle.HipHop, "Visit Hip Hop Trainer"},
+            {DanceStyle.LineDancing, "Visit Line Dancing Trainer"},
+            {DanceStyle.TapDancing, "Visit TapDancing Trainer"}
+        }
     Friend Const VisitEnthusiasmTrainerText = "Visit Enthusiasm Trainer"
     Friend Const VisitLifeCoachText = "Visit Life Coach"
     Friend Const YesText = "Yes"

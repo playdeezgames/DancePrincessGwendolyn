@@ -15,7 +15,7 @@
         AddEnnui(1)
         Dim confidenceRestored As Boolean = Confidence < MaximumConfidence
         If confidenceRestored Then
-            AddAnxiety(-1)
+            SetStatistic(CharacterStatisticType.Anxiety, GetStatistic(CharacterStatisticType.Anxiety).Value \ 2)
         End If
         Dim style = DanceStyle.None
         Dim danceStyles = AllDanceStyles.Where(Function(x) RemainingUses(x) < TotalUses(x))
@@ -65,7 +65,7 @@
     End Property
 
     Private Const ConfidenceTrainingMultiplier As Long = 10
-    Private Const EnthusiasmTrainingMultiplier As Long = 10
+    Private Const EnthusiasmTrainingMultiplier As Long = 20
 
     Public ReadOnly Property CanTrainConfidence As Boolean
         Get
@@ -79,6 +79,12 @@
         End Get
     End Property
 
+    Public ReadOnly Property CanTrainDanceStyle(danceStyle As DanceStyle) As Boolean
+        Get
+            Return Sparkle >= DanceStyleTrainingCost(danceStyle)
+        End Get
+    End Property
+
     Public ReadOnly Property ConfidenceTrainingCost As Long
         Get
             Return MaximumConfidence * ConfidenceTrainingMultiplier
@@ -88,6 +94,12 @@
     Public ReadOnly Property EnthusiasmTrainingCost As Long
         Get
             Return MaximumEnthusiasm * EnthusiasmTrainingMultiplier
+        End Get
+    End Property
+
+    Public ReadOnly Property DanceStyleTrainingCost(danceStyle As DanceStyle) As Long
+        Get
+            Return GetStatistic(danceStyle.CharacterStatisticType).Value * GetStatistic(danceStyle.MaximumUsageStatisticType).Value
         End Get
     End Property
 
