@@ -26,6 +26,22 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public ReadOnly Property HasInventory As Boolean
+        Get
+            Return Not Inventory.IsEmpty
+        End Get
+    End Property
+
+    Public ReadOnly Property Inventory As Inventory
+        Get
+            Dim inventoryId As Long? = InventoryData.ReadForCharacter(Id)
+            If Not inventoryId.HasValue Then
+                inventoryId = InventoryData.CreateForCharacter(Id)
+            End If
+            Return Inventory.FromId(inventoryId)
+        End Get
+    End Property
+
     Public Sub BuyIceCream()
         If CanBuyIceCream Then
             RestoreEnthusiasm()

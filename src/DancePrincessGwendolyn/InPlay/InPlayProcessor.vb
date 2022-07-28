@@ -22,6 +22,12 @@
                 prompt.AddChoice(DanceOffText)
             End If
             prompt.AddChoice(MoveText)
+            If character.HasInventory Then
+                prompt.AddChoice(InventoryText)
+            End If
+            If location.HasInventory Then
+                prompt.AddChoice(GroundText)
+            End If
             If character.CanRecover Then
                 prompt.AddChoice(RecoverText)
             End If
