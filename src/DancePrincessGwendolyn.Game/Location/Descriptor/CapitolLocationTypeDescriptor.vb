@@ -15,4 +15,10 @@
 
     Friend Overrides Sub OnRefresh(location As Location)
     End Sub
+
+    Friend Overrides ReadOnly Property CanBuyIceCream As Boolean
+        Get
+            Return True
+        End Get
+    End Property
 End Class

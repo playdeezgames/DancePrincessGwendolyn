@@ -21,4 +21,8 @@ Public Module LocationTypeExtensions
     Function HasLifeCoach(locationType As LocationType) As Boolean
         Return LocationTypeDescriptors(locationType).HasLifeCoach
     End Function
+    <Extension>
+    Function CanBuyIceCream(locationType As LocationType) As Boolean
+        Return LocationTypeDescriptors(locationType).CanBuyIceCream
+    End Function
 End Module

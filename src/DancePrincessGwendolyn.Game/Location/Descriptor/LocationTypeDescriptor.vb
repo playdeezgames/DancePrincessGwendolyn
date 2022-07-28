@@ -2,6 +2,12 @@
     MustOverride ReadOnly Property Name As String
     Friend MustOverride Sub OnRefresh(location As Location)
     MustOverride ReadOnly Property HasLifeCoach As Boolean
+
+    Friend Overridable ReadOnly Property CanBuyIceCream As Boolean
+        Get
+            Return False
+        End Get
+    End Property
 End Class
 Friend Module LocationTypeDescriptorUtility
     Friend ReadOnly LocationTypeDescriptors As IReadOnlyDictionary(Of LocationType, LocationTypeDescriptor) =

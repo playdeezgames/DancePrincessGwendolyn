@@ -59,6 +59,13 @@ Public Class Location
             End Select
         End Get
     End Property
+
+    Friend ReadOnly Property CanBuyIceCream As Boolean
+        Get
+            Return LocationType.CanBuyIceCream
+        End Get
+    End Property
+
     Public ReadOnly Property Characters As IEnumerable(Of Character)
         Get
             Return CharacterData.ForLocation(Id).Select(Function(x) Character.FromId(x))

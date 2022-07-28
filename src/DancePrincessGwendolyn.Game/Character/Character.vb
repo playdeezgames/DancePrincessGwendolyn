@@ -26,6 +26,17 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public Sub BuyIceCream()
+        If CanBuyIceCream Then
+            RestoreEnthusiasm()
+            AddBux(-1)
+        End If
+    End Sub
+
+    Public Sub RestoreEnthusiasm()
+        SetStatistic(CharacterStatisticType.Ennui, 0)
+    End Sub
+
     Public Sub TrainConfidence()
         If CanTrainConfidence Then
             AddSparkle(-ConfidenceTrainingCost)
@@ -46,6 +57,12 @@
             SetStatistic(danceStyle.CharacterStatisticType, GetStatistic(danceStyle.CharacterStatisticType).Value + 1)
         End If
     End Sub
+
+    Public ReadOnly Property CanBuyIceCream() As Boolean
+        Get
+            Return Enthusiasm < MaximumEnthusiasm AndAlso Location.CanBuyIceCream AndAlso Bux > 0
+        End Get
+    End Property
 
     Public Sub TrainDanceStyleUse(danceStyle As DanceStyle)
         If CanTrainDanceStyle(danceStyle) Then

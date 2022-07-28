@@ -34,6 +34,9 @@
             If character.CanVisitLifeCoach Then
                 prompt.AddChoice(VisitLifeCoachText)
             End If
+            If character.CanBuyIceCream Then
+                prompt.AddChoice(BuyIceCreamText)
+            End If
             Dim danceStyle = location.DanceStyle
             If danceStyle.HasValue AndAlso danceStyle <> Game.DanceStyle.None Then
                 If character.CanTrainDanceStyle(danceStyle.Value) Then
@@ -71,6 +74,8 @@
                     DanceStyleTrainerProcessor.Run(Game.DanceStyle.LineDancing)
                 Case VisitDanceStyleTrainerText(Game.DanceStyle.TapDancing)
                     DanceStyleTrainerProcessor.Run(Game.DanceStyle.TapDancing)
+                Case BuyIceCreamText
+                    BuyIceCreamProcessor.Run()
             End Select
         End While
     End Sub

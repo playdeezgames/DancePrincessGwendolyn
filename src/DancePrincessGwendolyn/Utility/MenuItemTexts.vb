@@ -1,6 +1,7 @@
 ﻿Module MenuItemTexts
     Friend Const AbandonGameText = "Abandon Game"
     Friend Const AddUseText = "Add Use"
+    Friend Const BuyIceCreamText = "Buy Ice Cream"
     Friend Const ContinueText = "Continue"
     Friend Const DanceOffText = "DANCE OFF!!"
     Friend Const GameMenuText = "Game Menu"
