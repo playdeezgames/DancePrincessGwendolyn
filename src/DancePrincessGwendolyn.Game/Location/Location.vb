@@ -14,6 +14,13 @@ Public Class Location
         End If
         Return New Location(locationId.Value)
     End Function
+
+    Public ReadOnly Property ShoppeItems As IEnumerable(Of ItemType)
+        Get
+            Return LocationType.ShoppeItems(Me)
+        End Get
+    End Property
+
     Friend Sub Refresh()
         LocationType.OnRefresh(Me)
     End Sub
@@ -38,6 +45,13 @@ Public Class Location
             LocationDanceStyleData.Clear(Id)
         End Set
     End Property
+
+    Public ReadOnly Property HasShoppe As Boolean
+        Get
+            Return LocationType.HasShoppe
+        End Get
+    End Property
+
     Friend ReadOnly Property HasLifeCoach As Boolean
         Get
             Return LocationType.HasLifeCoach

@@ -8,6 +8,18 @@
             Return False
         End Get
     End Property
+
+    Friend Overridable ReadOnly Property HasShoppe As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+
+    Friend Overridable ReadOnly Property ShoppeItems(location As Location) As IEnumerable(Of ItemType)
+        Get
+            Return New List(Of ItemType)
+        End Get
+    End Property
 End Class
 Friend Module LocationTypeDescriptorUtility
     Friend ReadOnly LocationTypeDescriptors As IReadOnlyDictionary(Of LocationType, LocationTypeDescriptor) =

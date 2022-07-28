@@ -9,7 +9,7 @@
             $"CREATE TABLE IF NOT EXISTS [{TableName}]
             (
                 [{InventoryIdColumn}] INT NOT NULL,
-                [{ItemIdColumn}] INT NOT NULL,
+                [{ItemIdColumn}] INT NOT NULL UNIQUE,
                 FOREIGN KEY ([{InventoryIdColumn}]) REFERENCES [{InventoryData.TableName}]([{InventoryData.InventoryIdColumn}]),
                 FOREIGN KEY ([{ItemIdColumn}]) REFERENCES [{ItemData.TableName}]([{ItemData.ItemIdColumn}])
             );")

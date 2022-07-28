@@ -25,6 +25,9 @@
             If character.HasInventory Then
                 prompt.AddChoice(InventoryText)
             End If
+            If character.CanShop Then
+                prompt.AddChoice(GoShoppingText)
+            End If
             If location.HasInventory Then
                 prompt.AddChoice(GroundText)
             End If
@@ -82,6 +85,8 @@
                     DanceStyleTrainerProcessor.Run(Game.DanceStyle.TapDancing)
                 Case BuyIceCreamText
                     BuyIceCreamProcessor.Run()
+                Case GoShoppingText
+                    GoShoppingProcessor.Run()
             End Select
         End While
     End Sub

@@ -22,7 +22,15 @@ Public Module LocationTypeExtensions
         Return LocationTypeDescriptors(locationType).HasLifeCoach
     End Function
     <Extension>
+    Function HasShoppe(locationType As LocationType) As Boolean
+        Return LocationTypeDescriptors(locationType).HasShoppe
+    End Function
+    <Extension>
     Function CanBuyIceCream(locationType As LocationType) As Boolean
         Return LocationTypeDescriptors(locationType).CanBuyIceCream
+    End Function
+    <Extension>
+    Function ShoppeItems(locationType As LocationType, location As Location) As IEnumerable(Of ItemType)
+        Return LocationTypeDescriptors(locationType).ShoppeItems(location)
     End Function
 End Module

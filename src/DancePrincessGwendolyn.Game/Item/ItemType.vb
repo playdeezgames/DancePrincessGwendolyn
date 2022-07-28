@@ -9,4 +9,8 @@ Public Module ItemTypeExtensions
     Function Name(itemType As ItemType) As String
         Return ItemTypeDescriptors(itemType).Name
     End Function
+    <Extension>
+    Function Price(itemType As ItemType) As Long
+        Return ItemTypeDescriptors(itemType).Price
+    End Function
 End Module

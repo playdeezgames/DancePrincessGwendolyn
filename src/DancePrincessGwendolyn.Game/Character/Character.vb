@@ -322,4 +322,10 @@
             Return Id = World.PlayerCharacter.Id
         End Get
     End Property
+
+    Public ReadOnly Property CanShop As Boolean
+        Get
+            Return Location.HasShoppe
+        End Get
+    End Property
 End Class
