@@ -89,6 +89,8 @@
                     GoShoppingProcessor.Run()
                 Case InventoryText
                     InventoryProcessor.Run(character)
+                Case GroundText
+                    GroundProcessor.Run(character)
             End Select
         End While
     End Sub

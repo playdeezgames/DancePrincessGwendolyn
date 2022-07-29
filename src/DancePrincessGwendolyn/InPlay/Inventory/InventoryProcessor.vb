@@ -8,6 +8,9 @@
             Dim table As Dictionary(Of String, ItemType) =
             character.Inventory.ItemStacks.
             ToDictionary(Function(x) $"{x.Key.Name}(x{x.Value.Count})", Function(x) x.Key)
+            If Not table.Any Then
+                Exit Sub
+            End If
             prompt.AddChoices(table.Keys.ToArray)
             Dim answer = AnsiConsole.Prompt(prompt)
             Select Case answer

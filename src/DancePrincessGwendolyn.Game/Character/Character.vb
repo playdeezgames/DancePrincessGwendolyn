@@ -26,6 +26,14 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public Sub PickUp(item As Item)
+        Inventory.Add(item)
+    End Sub
+
+    Public Sub Drop(item As Item)
+        Location.Inventory.Add(item)
+    End Sub
+
     Public ReadOnly Property HasInventory As Boolean
         Get
             Return Not Inventory.IsEmpty
