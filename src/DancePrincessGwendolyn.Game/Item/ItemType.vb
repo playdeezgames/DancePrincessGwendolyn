@@ -15,6 +15,12 @@ Public Enum ItemType
     Hoodie
     DoubleDenim
     TuxedoDress
+    Ribbon
+    Bindi
+    Headband
+    Ballcap
+    CowboyHat
+    Tophat
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
