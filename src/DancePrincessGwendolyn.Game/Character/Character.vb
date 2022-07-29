@@ -32,6 +32,17 @@
         End Get
     End Property
 
+    Public Function CanBuy(itemType As ItemType) As Boolean
+        Return Bux >= itemType.Price
+    End Function
+
+    Public Sub Buy(itemType As ItemType)
+        If CanBuy(itemType) Then
+            AddBux(-itemType.Price)
+            Inventory.Add(Item.Create(itemType))
+        End If
+    End Sub
+
     Public ReadOnly Property Inventory As Inventory
         Get
             Dim inventoryId As Long? = InventoryData.ReadForCharacter(Id)

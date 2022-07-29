@@ -11,4 +11,11 @@
                 [{ItemTypeColumn}] INT NOT NULL
             );")
     End Sub
+
+    Public Function Create(itemType As Long) As Long
+        Return CreateRecord(
+            AddressOf Initialize,
+            TableName,
+            (ItemTypeColumn, itemType))
+    End Function
 End Module

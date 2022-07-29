@@ -11,12 +11,24 @@
             prompt.AddChoice(NeverMindText)
             Dim table = itemTypes.ToDictionary(Function(x) $"{x.Name} ({x.Price} Bux)", Function(x) x)
             prompt.AddChoices(table.Keys.ToArray)
-            Select Case AnsiConsole.Prompt(prompt)
+            Dim answer = AnsiConsole.Prompt(prompt)
+            Select Case answer
                 Case NeverMindText
                     done = True
                 Case Else
-
+                    BuyItemType(character, table(answer))
             End Select
         End While
+    End Sub
+
+    Private Sub BuyItemType(character As Character, itemType As ItemType)
+        If Not character.CanBuy(itemType) Then
+            AnsiConsole.MarkupLine($"{character.Name} cannot afford that!")
+            OkPrompt()
+            Return
+        End If
+        character.Buy(itemType)
+        AnsiConsole.MarkupLine($"{character.Name} buys {itemType.Name}!")
+        OkPrompt()
     End Sub
 End Module
