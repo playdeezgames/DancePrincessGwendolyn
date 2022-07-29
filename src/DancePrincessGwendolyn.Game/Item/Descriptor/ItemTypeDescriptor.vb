@@ -16,12 +16,18 @@ Public Module ItemTypeDescriptorUtility
         New Dictionary(Of ItemType, ItemTypeDescriptor) From
         {
             {ItemType.BalletSlippers, New BalletSlippersDescriptor},
+            {ItemType.CheerleaderOutfit, New CheerleaderOutfitDescriptor},
             {ItemType.Chux, New ChuxDescriptor},
             {ItemType.CowboyBoots, New CowboyBootsDescriptor},
+            {ItemType.DoubleDenim, New DoubleDenimDescriptor},
+            {ItemType.Hoodie, New HoodieDescriptor},
+            {ItemType.Leotard, New LeotardDescriptor},
             {ItemType.Sandals, New SandalsDescriptor},
+            {ItemType.Sari, New SariDescriptor},
             {ItemType.Snax, New SnaxDescriptor},
             {ItemType.Sneakers, New SneakersDescriptor},
-            {ItemType.TapShoes, New TapShoesDescriptor}
+            {ItemType.TapShoes, New TapShoesDescriptor},
+            {ItemType.TuxedoDress, New TuxedoDressDescriptor}
         }
     Public ReadOnly Property AllItemTypes As IEnumerable(Of ItemType)
         Get

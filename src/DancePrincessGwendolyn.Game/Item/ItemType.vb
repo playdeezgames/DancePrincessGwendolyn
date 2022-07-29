@@ -9,6 +9,12 @@ Public Enum ItemType
     Chux
     CowboyBoots
     TapShoes
+    Leotard
+    Sari
+    CheerleaderOutfit
+    Hoodie
+    DoubleDenim
+    TuxedoDress
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
