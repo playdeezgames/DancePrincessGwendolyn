@@ -3,6 +3,12 @@
 Public Enum ItemType
     None
     Snax
+    BalletSlippers
+    Sandals
+    Sneakers
+    Chux
+    CowboyBoots
+    TapShoes
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

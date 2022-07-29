@@ -15,7 +15,13 @@ Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =
         New Dictionary(Of ItemType, ItemTypeDescriptor) From
         {
-            {ItemType.Snax, New SnaxDescriptor}
+            {ItemType.BalletSlippers, New BalletSlippersDescriptor},
+            {ItemType.Chux, New ChuxDescriptor},
+            {ItemType.CowboyBoots, New CowboyBootsDescriptor},
+            {ItemType.Sandals, New SandalsDescriptor},
+            {ItemType.Snax, New SnaxDescriptor},
+            {ItemType.Sneakers, New SneakersDescriptor},
+            {ItemType.TapShoes, New TapShoesDescriptor}
         }
     Public ReadOnly Property AllItemTypes As IEnumerable(Of ItemType)
         Get

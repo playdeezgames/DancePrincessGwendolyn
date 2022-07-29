@@ -36,6 +36,7 @@
                 DanceStyle.Ballet,
                 New List(Of ItemType) From
                 {
+                    ItemType.BalletSlippers,
                     ItemType.Snax
                 }
             },
@@ -43,6 +44,7 @@
                 DanceStyle.Bollywood,
                 New List(Of ItemType) From
                 {
+                    ItemType.Sandals,
                     ItemType.Snax
                 }
             },
@@ -50,13 +52,15 @@
                 DanceStyle.Cheerleading,
                 New List(Of ItemType) From
                 {
-                    ItemType.Snax
+                    ItemType.Snax,
+                    ItemType.Sneakers
                 }
             },
             {
                 DanceStyle.HipHop,
                 New List(Of ItemType) From
                 {
+                    ItemType.Chux,
                     ItemType.Snax
                 }
             },
@@ -64,6 +68,7 @@
                 DanceStyle.LineDancing,
                 New List(Of ItemType) From
                 {
+                    ItemType.CowboyBoots,
                     ItemType.Snax
                 }
             },
@@ -71,7 +76,8 @@
                 DanceStyle.TapDancing,
                 New List(Of ItemType) From
                 {
-                    ItemType.Snax
+                    ItemType.Snax,
+                    ItemType.TapShoes
                 }
             }
         }
