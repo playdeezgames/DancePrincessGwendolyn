@@ -87,6 +87,8 @@
                     BuyIceCreamProcessor.Run()
                 Case GoShoppingText
                     GoShoppingProcessor.Run()
+                Case InventoryText
+                    InventoryProcessor.Run(character)
             End Select
         End While
     End Sub
