@@ -6,6 +6,7 @@ Public Enum EquipSlot
     Hands
     Head
     Outfit
+    Bling
 End Enum
 Public Module EquipSlotExtensions
     <Extension>
