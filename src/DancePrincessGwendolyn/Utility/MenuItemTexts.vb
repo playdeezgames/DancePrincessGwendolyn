@@ -19,6 +19,7 @@
     Friend Const RecoverText = "Recover"
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
+    Friend Const UseText = "Use"
     Friend Const VisitConfidenceTrainerText = "Visit Confidence Trainer"
     Friend ReadOnly VisitDanceStyleTrainerText As IReadOnlyDictionary(Of DanceStyle, String) =
         New Dictionary(Of DanceStyle, String) From

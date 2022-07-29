@@ -13,4 +13,12 @@ Public Module ItemTypeExtensions
     Function Price(itemType As ItemType) As Long
         Return ItemTypeDescriptors(itemType).Price
     End Function
+    <Extension>
+    Function CanUse(itemtype As ItemType) As Boolean
+        Return ItemTypeDescriptors(itemtype).CanUse
+    End Function
+    <Extension>
+    Function Use(itemType As ItemType, character As Character) As String
+        Return ItemTypeDescriptors(itemType).Use(character)
+    End Function
 End Module

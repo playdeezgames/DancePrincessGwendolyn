@@ -26,4 +26,12 @@
             ItemTypeColumn,
             (ItemIdColumn, itemId))
     End Function
+
+    Public Sub Clear(itemId As Long)
+        InventoryItemData.ClearForItem(itemId)
+        ClearForColumnValue(
+            AddressOf Initialize,
+            TableName,
+            (ItemIdColumn, itemId))
+    End Sub
 End Module

@@ -26,6 +26,17 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public Function Use(item As Item) As String
+        If Not CanUse(item) Then
+            Return $"{Name} cannot use {item.Name} at this time!"
+        End If
+        Return item.Use(Me)
+    End Function
+
+    Public Function CanUse(item As Item) As Boolean
+        Return item.CanUse
+    End Function
+
     Public Sub PickUp(item As Item)
         Inventory.Add(item)
     End Sub

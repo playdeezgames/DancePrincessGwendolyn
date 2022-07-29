@@ -23,6 +23,13 @@
             (ItemIdColumn, itemId))
     End Sub
 
+    Friend Sub ClearForItem(itemId As Long)
+        ClearForColumnValue(
+            AddressOf Initialize,
+            TableName,
+            (ItemIdColumn, itemId))
+    End Sub
+
     Public Function Read(inventoryId As Long) As IEnumerable(Of Long)
         Return ReadRecordsWithColumnValue(Of Long, Long)(
             AddressOf Initialize,

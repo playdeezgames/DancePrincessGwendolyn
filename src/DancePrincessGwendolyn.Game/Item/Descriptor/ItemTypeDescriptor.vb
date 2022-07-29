@@ -1,6 +1,15 @@
 ﻿Friend MustInherit Class ItemTypeDescriptor
     MustOverride ReadOnly Property Name As String
     MustOverride ReadOnly Property Price As Long
+    Overridable ReadOnly Property CanUse As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+
+    Overridable Function Use(character As Character) As String
+        Return $"{character.Name} cannot use {Name} right now."
+    End Function
 End Class
 Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =

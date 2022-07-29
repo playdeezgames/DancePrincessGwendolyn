@@ -21,4 +21,20 @@
             Return ItemType.Name
         End Get
     End Property
+
+    Friend ReadOnly Property CanUse As Boolean
+        Get
+            Return ItemType.CanUse
+        End Get
+    End Property
+
+    Friend Function Use(character As Character) As String
+        Dim message = ItemType.Use(character)
+        Destroy()
+        Return message
+    End Function
+
+    Private Sub Destroy()
+        ItemData.Clear(Id)
+    End Sub
 End Class
