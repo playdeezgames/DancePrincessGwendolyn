@@ -1,4 +1,8 @@
 ﻿Friend MustInherit Class ItemTypeDescriptor
+    ReadOnly BuffTable As IReadOnlyDictionary(Of CharacterStatisticType, Long)
+    Sub New(buffTable As IReadOnlyDictionary(Of CharacterStatisticType, Long))
+        Me.BuffTable = buffTable
+    End Sub
     MustOverride ReadOnly Property Name As String
     MustOverride ReadOnly Property Price As Long
     Overridable ReadOnly Property CanUse As Boolean
@@ -10,6 +14,15 @@
         Return $"{character.Name} cannot use {Name} right now."
     End Function
     MustOverride ReadOnly Property EquipSlot As EquipSlot
+
+    Function GetBuff(statisticType As CharacterStatisticType) As Long?
+        Dim result As Long? = Nothing
+        Dim buff As Long
+        If BuffTable.TryGetValue(statisticType, buff) Then
+            result = buff
+        End If
+        Return result
+    End Function
 End Class
 Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =

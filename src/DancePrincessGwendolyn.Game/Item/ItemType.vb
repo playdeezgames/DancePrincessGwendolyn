@@ -53,4 +53,8 @@ Public Module ItemTypeExtensions
     Function EquipSlot(itemType As ItemType) As EquipSlot
         Return ItemTypeDescriptors(itemType).EquipSlot
     End Function
+    <Extension>
+    Function GetBuff(itemType As ItemType, statisticType As CharacterStatisticType) As Long?
+        Return ItemTypeDescriptors(itemType).GetBuff(statisticType)
+    End Function
 End Module

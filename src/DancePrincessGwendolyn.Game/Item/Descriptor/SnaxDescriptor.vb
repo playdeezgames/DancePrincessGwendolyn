@@ -1,5 +1,8 @@
 ﻿Friend Class SnaxDescriptor
     Inherits ItemTypeDescriptor
+    Sub New()
+        MyBase.New(New Dictionary(Of CharacterStatisticType, Long))
+    End Sub
 
     Public Overrides ReadOnly Property Name As String
         Get

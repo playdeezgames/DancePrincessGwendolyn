@@ -347,7 +347,11 @@
     End Property
 
     Public Function GetStatistic(statisticType As CharacterStatisticType) As Long?
-        Return CharacterStatisticData.Read(Id, statisticType)
+        Dim result = CharacterStatisticData.Read(Id, statisticType)
+        For Each item In EquipSlots.Values
+            result += If(item.GetBuff(statisticType), 0)
+        Next
+        Return result
     End Function
 
     Private Sub ChangeStatistic(statisticType As CharacterStatisticType, delta As Long)

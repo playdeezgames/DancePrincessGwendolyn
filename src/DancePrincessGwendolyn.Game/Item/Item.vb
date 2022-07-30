@@ -47,4 +47,8 @@
             Return ItemType.EquipSlot
         End Get
     End Property
+
+    Friend Function GetBuff(statisticType As CharacterStatisticType) As Long?
+        Return ItemType.GetBuff(statisticType)
+    End Function
 End Class

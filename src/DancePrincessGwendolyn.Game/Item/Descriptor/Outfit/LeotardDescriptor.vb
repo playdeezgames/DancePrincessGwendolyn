@@ -1,5 +1,16 @@
 ﻿Friend Class LeotardDescriptor
     Inherits ItemTypeDescriptor
+    Sub New()
+        MyBase.New(New Dictionary(Of CharacterStatisticType, Long) From
+                   {
+                        {CharacterStatisticType.BalletSkill, 6},
+                        {CharacterStatisticType.BollywoodSkill, 0},
+                        {CharacterStatisticType.CheerleadingSkill, -12},
+                        {CharacterStatisticType.HipHopSkill, -6},
+                        {CharacterStatisticType.LineDancingSkill, 0},
+                        {CharacterStatisticType.TapDancingSkill, -6}
+                   })
+    End Sub
 
     Public Overrides ReadOnly Property Name As String
         Get

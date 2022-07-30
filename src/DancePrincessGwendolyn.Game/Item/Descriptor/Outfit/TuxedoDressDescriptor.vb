@@ -1,5 +1,16 @@
 ﻿Friend Class TuxedoDressDescriptor
     Inherits ItemTypeDescriptor
+    Sub New()
+        MyBase.New(New Dictionary(Of CharacterStatisticType, Long) From
+                   {
+                        {CharacterStatisticType.BalletSkill, -6},
+                        {CharacterStatisticType.BollywoodSkill, -12},
+                        {CharacterStatisticType.CheerleadingSkill, 0},
+                        {CharacterStatisticType.HipHopSkill, -6},
+                        {CharacterStatisticType.LineDancingSkill, 0},
+                        {CharacterStatisticType.TapDancingSkill, 6}
+                   })
+    End Sub
 
     Public Overrides ReadOnly Property Name As String
         Get
