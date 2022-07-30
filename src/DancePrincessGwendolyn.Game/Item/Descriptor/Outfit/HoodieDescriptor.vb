@@ -12,4 +12,10 @@
             Return 100
         End Get
     End Property
+
+    Public Overrides ReadOnly Property EquipSlot As EquipSlot
+        Get
+            Return EquipSlot.Outfit
+        End Get
+    End Property
 End Class

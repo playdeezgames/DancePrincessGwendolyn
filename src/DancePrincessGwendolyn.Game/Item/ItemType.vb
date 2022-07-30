@@ -45,4 +45,12 @@ Public Module ItemTypeExtensions
     Function Use(itemType As ItemType, character As Character) As String
         Return ItemTypeDescriptors(itemType).Use(character)
     End Function
+    <Extension>
+    Function CanEquip(itemType As ItemType) As Boolean
+        Return ItemTypeDescriptors(itemType).EquipSlot <> Game.EquipSlot.None
+    End Function
+    <Extension>
+    Function EquipSlot(itemType As ItemType) As EquipSlot
+        Return ItemTypeDescriptors(itemType).EquipSlot
+    End Function
 End Module

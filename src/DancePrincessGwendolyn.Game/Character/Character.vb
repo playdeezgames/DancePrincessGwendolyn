@@ -26,6 +26,17 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public Sub Equip(item As Item)
+        If CanEquip(item) Then
+            InventoryItemData.ClearForItem(item.Id)
+            EquipSlotItemData.Write(Id, item.EquipSlot, item.Id)
+        End If
+    End Sub
+
+    Public Function CanEquip(item As Item) As Boolean
+        Return item.CanEquip()
+    End Function
+
     Public Function Use(item As Item) As String
         If Not CanUse(item) Then
             Return $"{Name} cannot use {item.Name} at this time!"

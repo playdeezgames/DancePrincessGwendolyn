@@ -19,6 +19,12 @@
         End Get
     End Property
 
+    Public Overrides ReadOnly Property EquipSlot As EquipSlot
+        Get
+            Return EquipSlot.None
+        End Get
+    End Property
+
     Public Overrides Function Use(character As Character) As String
         Dim message = $"{character.Name} eats the {Name} and feels more enthusiastic!"
         character.RestoreEnthusiasm()

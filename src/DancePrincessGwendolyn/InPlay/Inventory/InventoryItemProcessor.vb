@@ -6,6 +6,9 @@
         If character.CanUse(item) Then
             prompt.AddChoices(UseText)
         End If
+        If character.CanEquip(item) Then
+            prompt.AddChoice(EquipText)
+        End If
         Select Case AnsiConsole.Prompt(prompt)
             Case NeverMindText
                 'do nothing!
@@ -15,6 +18,10 @@
                 OkPrompt()
             Case UseText
                 AnsiConsole.MarkupLine(character.Use(item))
+                OkPrompt()
+            Case EquipText
+                AnsiConsole.MarkupLine($"{character.Name} equips the {item.Name}!")
+                character.Equip(item)
                 OkPrompt()
         End Select
     End Sub

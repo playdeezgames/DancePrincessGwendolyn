@@ -6,10 +6,10 @@
             Return False
         End Get
     End Property
-
     Overridable Function Use(character As Character) As String
         Return $"{character.Name} cannot use {Name} right now."
     End Function
+    MustOverride ReadOnly Property EquipSlot As EquipSlot
 End Class
 Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =

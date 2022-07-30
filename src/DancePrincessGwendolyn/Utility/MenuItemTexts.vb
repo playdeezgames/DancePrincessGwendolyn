@@ -5,6 +5,7 @@
     Friend Const ContinueText = "Continue"
     Friend Const DanceOffText = "DANCE OFF!!"
     Friend Const DropText = "Drop"
+    Friend Const EquipText = "Equip"
     Friend Const GameMenuText = "Game Menu"
     Friend Const GiveUpText = "Give Up!"
     Friend Const GoShoppingText = "Go Shopping!"

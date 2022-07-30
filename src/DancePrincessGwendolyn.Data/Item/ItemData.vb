@@ -29,6 +29,7 @@
 
     Public Sub Clear(itemId As Long)
         InventoryItemData.ClearForItem(itemId)
+        EquipSlotItemData.ClearForItem(itemId)
         ClearForColumnValue(
             AddressOf Initialize,
             TableName,

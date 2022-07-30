@@ -37,4 +37,14 @@
     Private Sub Destroy()
         ItemData.Clear(Id)
     End Sub
+
+    Friend Function CanEquip() As Boolean
+        Return ItemType.CanEquip
+    End Function
+
+    Friend ReadOnly Property EquipSlot As EquipSlot
+        Get
+            Return ItemType.EquipSlot
+        End Get
+    End Property
 End Class
