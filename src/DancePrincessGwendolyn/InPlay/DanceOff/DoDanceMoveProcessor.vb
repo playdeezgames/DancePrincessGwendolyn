@@ -68,7 +68,7 @@ Module DoDanceMoveProcessor
     End Sub
 
     Private Function DoRivalRoll(danceStyle As DanceStyle, rival As Character) As Long
-        Dim total As Long = 0
+        Dim total As Long = rival.GetStatisticBuff(danceStyle.CharacterStatisticType)
         Dim dieSize = rival.DanceSkills(danceStyle)
         Dim done = True
         rival.AddUse(danceStyle)
@@ -83,14 +83,14 @@ Module DoDanceMoveProcessor
                 done = False
             End If
         Loop Until done
-        Return total
+        Return Math.Max(1, total)
     End Function
 
     Private Function DoPlayerRoll(danceStyle As DanceStyle, player As Character) As Long
-        Dim playerTotal As Long = 0
+        Dim playerTotal As Long = player.GetStatisticBuff(danceStyle.CharacterStatisticType)
         Dim dieSize = player.DanceSkills(danceStyle)
-        Dim done = True
         player.AddUse(danceStyle)
+        Dim done As Boolean
         Do
             done = True
             Dim roll = RNG.RollDice($"1d{dieSize}")
@@ -101,6 +101,6 @@ Module DoDanceMoveProcessor
                 done = False
             End If
         Loop Until done
-        Return playerTotal
+        Return Math.Max(1, playerTotal)
     End Function
 End Module

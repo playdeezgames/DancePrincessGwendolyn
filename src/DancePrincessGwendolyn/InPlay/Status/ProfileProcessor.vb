@@ -9,7 +9,8 @@
         AnsiConsole.WriteLine()
         AnsiConsole.MarkupLine("Dance Skills:")
         For Each entry In character.DanceSkills
-            AnsiConsole.MarkupLine($"{entry.Key.Name}: d{entry.Value} ({character.RemainingUses(entry.Key)}/{character.TotalUses(entry.Key)})")
+            Dim buff = character.GetStatisticBuff(entry.Key.CharacterStatisticType)
+            AnsiConsole.MarkupLine($"{entry.Key.Name}: d{entry.Value}{If(buff > 0, $"+{buff}", $"{buff}")} ({character.RemainingUses(entry.Key)}/{character.TotalUses(entry.Key)})")
         Next
         AnsiConsole.WriteLine()
         AnsiConsole.MarkupLine($"{CharacterStatisticType.Bux.Name}: {character.Bux}")
