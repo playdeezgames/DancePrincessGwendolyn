@@ -26,10 +26,18 @@
             (ItemIdColumn, itemId))
     End Sub
 
-    Friend Sub ClearForItem(itemId As Long)
+    Public Sub ClearForItem(itemId As Long)
         ClearForColumnValue(
             AddressOf Initialize,
             TableName,
             (ItemIdColumn, itemId))
     End Sub
+
+    Public Function ReadForCharacter(characterId As Long) As IEnumerable(Of Tuple(Of Long, Long))
+        Return ReadRecordsWithColumnValue(Of Long, Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            (EquipSlotColumn, ItemIdColumn),
+            (CharacterIdColumn, characterId))
+    End Function
 End Module

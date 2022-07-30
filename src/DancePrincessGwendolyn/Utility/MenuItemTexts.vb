@@ -7,6 +7,7 @@
     Friend Const DropText = "Drop"
     Friend Const EquipText = "Equip"
     Friend Const GameMenuText = "Game Menu"
+    Friend Const GearText = "Gear"
     Friend Const GiveUpText = "Give Up!"
     Friend Const GoShoppingText = "Go Shopping!"
     Friend Const GroundText = "Ground"
@@ -20,6 +21,7 @@
     Friend Const RecoverText = "Recover"
     Friend Const SaveText = "Save..."
     Friend Const StartText = "Start"
+    Friend Const UnequipText = "Unequip"
     Friend Const UseText = "Use"
     Friend Const VisitConfidenceTrainerText = "Visit Confidence Trainer"
     Friend ReadOnly VisitDanceStyleTrainerText As IReadOnlyDictionary(Of DanceStyle, String) =

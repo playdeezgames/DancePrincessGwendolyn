@@ -15,7 +15,7 @@
 
     Public Overrides ReadOnly Property EquipSlot As EquipSlot
         Get
-            Return EquipSlot.Head
+            Return EquipSlot.Hands
         End Get
     End Property
 End Class

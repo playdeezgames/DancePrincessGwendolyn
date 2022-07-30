@@ -26,12 +26,35 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public Sub Unequip(equipSlot As EquipSlot)
+        Dim item As Item = Nothing
+        If EquipSlots.TryGetValue(equipSlot, item) Then
+            EquipSlotItemData.ClearForItem(item.Id)
+            Inventory.Add(item)
+        End If
+    End Sub
+
     Public Sub Equip(item As Item)
         If CanEquip(item) Then
             InventoryItemData.ClearForItem(item.Id)
             EquipSlotItemData.Write(Id, item.EquipSlot, item.Id)
         End If
     End Sub
+
+    Public ReadOnly Property EquipSlots As IReadOnlyDictionary(Of EquipSlot, Item)
+        Get
+            Return EquipSlotItemData.ReadForCharacter(Id).
+                ToDictionary(
+                    Function(x) CType(x.Item1, EquipSlot),
+                    Function(x) Item.FromId(x.Item2))
+        End Get
+    End Property
+
+    Public ReadOnly Property HasEquipment As Boolean
+        Get
+            Return EquipSlots.Any
+        End Get
+    End Property
 
     Public Function CanEquip(item As Item) As Boolean
         Return item.CanEquip()

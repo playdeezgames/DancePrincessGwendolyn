@@ -25,6 +25,9 @@
             If character.HasInventory Then
                 prompt.AddChoice(InventoryText)
             End If
+            If character.HasEquipment Then
+                prompt.AddChoice(GearText)
+            End If
             If character.CanShop Then
                 prompt.AddChoice(GoShoppingText)
             End If
@@ -91,6 +94,8 @@
                     InventoryProcessor.Run(character)
                 Case GroundText
                     GroundProcessor.Run(character)
+                Case GearText
+                    GearProcessor.Run(character)
             End Select
         End While
     End Sub
