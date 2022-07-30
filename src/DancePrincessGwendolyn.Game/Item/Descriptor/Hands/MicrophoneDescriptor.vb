@@ -1,15 +1,15 @@
-﻿Friend Class TopHatDescriptor
+﻿Friend Class MicrophoneDescriptor
     Inherits ItemTypeDescriptor
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "Top Hat"
+            Return "Microphone"
         End Get
     End Property
 
     Public Overrides ReadOnly Property Price As Long
         Get
-            Return 50
+            Return 25
         End Get
     End Property
 End Class

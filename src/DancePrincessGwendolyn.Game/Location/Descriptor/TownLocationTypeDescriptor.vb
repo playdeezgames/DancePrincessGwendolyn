@@ -37,6 +37,9 @@
                 New List(Of ItemType) From
                 {
                     ItemType.BalletSlippers,
+                    ItemType.Baton,
+                    ItemType.Leotard,
+                    ItemType.Ribbon,
                     ItemType.Snax
                 }
             },
@@ -44,7 +47,10 @@
                 DanceStyle.Bollywood,
                 New List(Of ItemType) From
                 {
+                    ItemType.Bindi,
+                    ItemType.HennaTattoos,
                     ItemType.Sandals,
+                    ItemType.Sari,
                     ItemType.Snax
                 }
             },
@@ -52,6 +58,9 @@
                 DanceStyle.Cheerleading,
                 New List(Of ItemType) From
                 {
+                    ItemType.CheerleaderOutfit,
+                    ItemType.Headband,
+                    ItemType.PomPoms,
                     ItemType.Snax,
                     ItemType.Sneakers
                 }
@@ -60,7 +69,10 @@
                 DanceStyle.HipHop,
                 New List(Of ItemType) From
                 {
+                    ItemType.Ballcap,
                     ItemType.Chux,
+                    ItemType.Hoodie,
+                    ItemType.Microphone,
                     ItemType.Snax
                 }
             },
@@ -68,7 +80,10 @@
                 DanceStyle.LineDancing,
                 New List(Of ItemType) From
                 {
+                    ItemType.Bullwhip,
                     ItemType.CowboyBoots,
+                    ItemType.CowboyHat,
+                    ItemType.DoubleDenim,
                     ItemType.Snax
                 }
             },
@@ -76,8 +91,11 @@
                 DanceStyle.TapDancing,
                 New List(Of ItemType) From
                 {
+                    ItemType.Cane,
                     ItemType.Snax,
-                    ItemType.TapShoes
+                    ItemType.TapShoes,
+                    ItemType.Tophat,
+                    ItemType.TuxedoDress
                 }
             }
         }

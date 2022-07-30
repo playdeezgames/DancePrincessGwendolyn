@@ -21,6 +21,12 @@ Public Enum ItemType
     Ballcap
     CowboyHat
     Tophat
+    Baton
+    HennaTattoos
+    PomPoms
+    Microphone
+    Bullwhip
+    Cane
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
