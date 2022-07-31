@@ -23,6 +23,10 @@
         End If
         Return result
     End Function
+
+    Overridable Function CanWin() As Boolean
+        Return False
+    End Function
 End Class
 Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =

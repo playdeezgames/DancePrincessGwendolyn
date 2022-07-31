@@ -30,4 +30,8 @@
             Return EquipSlot.Bling
         End Get
     End Property
+
+    Public Overrides Function CanWin() As Boolean
+        Return True
+    End Function
 End Class

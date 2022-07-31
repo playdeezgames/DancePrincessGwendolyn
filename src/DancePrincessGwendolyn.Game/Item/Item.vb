@@ -42,6 +42,10 @@
         Return ItemType.CanEquip
     End Function
 
+    Friend Function CanWin() As Boolean
+        Return ItemType.CanWin
+    End Function
+
     Friend ReadOnly Property EquipSlot As EquipSlot
         Get
             Return ItemType.EquipSlot

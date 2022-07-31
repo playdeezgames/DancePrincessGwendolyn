@@ -26,6 +26,12 @@
         Return (confidenceRestored, style)
     End Function
 
+    Public ReadOnly Property CanWin As Boolean
+        Get
+            Return EquipSlots.Any(Function(x) x.Value.CanWin)
+        End Get
+    End Property
+
     Public Sub Unequip(equipSlot As EquipSlot)
         Dim item As Item = Nothing
         If EquipSlots.TryGetValue(equipSlot, item) Then

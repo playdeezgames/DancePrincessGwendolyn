@@ -18,6 +18,9 @@
             Next
 
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
+            If character.CanWin Then
+                prompt.AddChoice(WinGameText)
+            End If
             If character.CanDoDanceOff Then
                 prompt.AddChoice(DanceOffText)
             End If
@@ -96,6 +99,9 @@
                     GroundProcessor.Run(character)
                 Case GearText
                     GearProcessor.Run(character)
+                Case WinGameText
+                    WinGameProcessor.Run(character)
+                    done = True
             End Select
         End While
     End Sub

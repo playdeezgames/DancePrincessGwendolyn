@@ -33,6 +33,12 @@ Module DoDanceMoveProcessor
         Dim bux As Long = character.RollDefeatBux
         player.AddBux(bux)
         AnsiConsole.MarkupLine($"{player.Name} receives {bux} bux, and now has a total of {player.Bux} bux!")
+        If character.HasEquipment Then
+            For Each entry In character.EquipSlots
+                AnsiConsole.MarkupLine($"{player.Name} receives {character.Name}'s {entry.Value.Name}!")
+                player.Inventory.Add(entry.Value)
+            Next
+        End If
         character.Destroy()
     End Sub
 

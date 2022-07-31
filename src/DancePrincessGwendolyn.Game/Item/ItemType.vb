@@ -57,6 +57,10 @@ Public Module ItemTypeExtensions
         Return ItemTypeDescriptors(itemType).EquipSlot <> Game.EquipSlot.None
     End Function
     <Extension>
+    Function CanWin(itemType As ItemType) As Boolean
+        Return ItemTypeDescriptors(itemType).CanWin
+    End Function
+    <Extension>
     Function EquipSlot(itemType As ItemType) As EquipSlot
         Return ItemTypeDescriptors(itemType).EquipSlot
     End Function

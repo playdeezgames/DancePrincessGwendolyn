@@ -49,6 +49,8 @@
     End Function
 
     Public Sub Clear(characterId As Long)
+        InventoryData.ClearForCharacter(characterId)
+        EquipSlotItemData.ClearForCharacter(characterId)
         CharacterStatisticData.ClearForCharacter(characterId)
         ClearForColumnValue(
             AddressOf Initialize,

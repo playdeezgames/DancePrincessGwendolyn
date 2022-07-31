@@ -24,6 +24,7 @@
     Friend Const UnequipText = "Unequip"
     Friend Const UseText = "Use"
     Friend Const VisitConfidenceTrainerText = "Visit Confidence Trainer"
+    Friend Const WinGameText = "WIN THE GAME!"
     Friend ReadOnly VisitDanceStyleTrainerText As IReadOnlyDictionary(Of DanceStyle, String) =
         New Dictionary(Of DanceStyle, String) From
         {

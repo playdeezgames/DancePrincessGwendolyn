@@ -11,7 +11,7 @@
             For Each style In AllDanceStyles
                 If player.RemainingUses(style) > 0 Then
                     Dim buff = player.GetStatisticBuff(style.CharacterStatisticType)
-                    Dim text = $"Use a {style.Name} move d{player.DanceSkills(style)}{If(buff > 0, $"+{buff}", $"{buff}")} ({player.RemainingUses(style)} remaining)!"
+                    Dim text = $"Use a {style.Name} move d{player.DanceSkills(style)}{If(buff >= 0, $"+{buff}", $"{buff}")} ({player.RemainingUses(style)} remaining)!"
                     table.Add(text, style)
                     prompt.AddChoice(text)
                 End If
