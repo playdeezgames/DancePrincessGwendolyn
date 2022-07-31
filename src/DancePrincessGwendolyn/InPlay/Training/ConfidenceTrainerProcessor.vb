@@ -9,6 +9,7 @@
         prompt.AddChoices(NoText, YesText)
         Select Case AnsiConsole.Prompt(prompt)
             Case YesText
+                SfxPlayer.Play(Sfx.Recovery)
                 player.TrainConfidence()
                 AnsiConsole.MarkupLine($"{player.Name} now has a maximum confidence of {player.MaximumConfidence}!")
                 OkPrompt()

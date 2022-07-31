@@ -2,6 +2,7 @@
     Friend Sub Run()
         Dim character = World.PlayerCharacter
         Dim result As (Boolean, DanceStyle) = character.Recover()
+        SfxPlayer.Play(Sfx.Recovery)
         AnsiConsole.MarkupLine($"{character.Name} recovers!")
         If result.Item1 Then
             AnsiConsole.MarkupLine($"{character.Name} now has {character.Confidence} confidence!")

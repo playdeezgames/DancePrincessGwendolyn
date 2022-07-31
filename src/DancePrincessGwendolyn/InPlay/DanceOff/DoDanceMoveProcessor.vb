@@ -19,8 +19,10 @@ Module DoDanceMoveProcessor
                     Return False
                 End If
                 If playerRoll > rivalRoll Then
+                    SfxPlayer.Play(Sfx.PlayerSuccess)
                     Return HandleReaction(rival, playerRoll \ rivalRoll, AddressOf RivalDefeat)
                 End If
+                SfxPlayer.Play(Sfx.RivalSuccess)
                 Return HandleReaction(player, rivalRoll \ playerRoll, AddressOf PlayerDefeat)
         End Select
     End Function
@@ -39,6 +41,7 @@ Module DoDanceMoveProcessor
                 player.Inventory.Add(entry.Value)
             Next
         End If
+        SfxPlayer.Play(Sfx.RivalDefeat)
         character.Destroy()
     End Sub
 
@@ -46,6 +49,7 @@ Module DoDanceMoveProcessor
         Dim bux As Long = player.RollDefeatBux
         player.AddBux(-bux)
         AnsiConsole.MarkupLine($"{player.Name} loses {bux} bux, and now has a total of {player.Bux} bux!")
+        SfxPlayer.Play(Sfx.PlayerDefeat)
     End Sub
 
     Private Function HandleReaction(reactor As Character, anxiety As Long, onDefeat As Action(Of Character)) As Boolean
@@ -64,11 +68,13 @@ Module DoDanceMoveProcessor
 
     Private Sub HandleTie()
         AnsiConsole.MarkupLine($"It's a tie! No confidence lost on either side!")
+        SfxPlayer.Play(Sfx.Tie)
         OkPrompt()
     End Sub
 
     Private Sub HandleRivalDefeat(rival As Character)
         AnsiConsole.MarkupLine($"{rival.Name} is out of moves and gives up!")
+        SfxPlayer.Play(Sfx.RivalDefeat)
         OkPrompt()
         rival.Destroy()
     End Sub

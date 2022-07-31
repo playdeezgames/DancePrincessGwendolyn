@@ -12,6 +12,7 @@
             Case NeverMindText
                 'do nothing
             Case Else
+                SfxPlayer.Play(Sfx.Recovery)
                 character.BuyIceCream()
                 AnsiConsole.MarkupLine($"{character.Name} loves the {answer}! {character.Name} feels more enthusiastic!")
                 OkPrompt()

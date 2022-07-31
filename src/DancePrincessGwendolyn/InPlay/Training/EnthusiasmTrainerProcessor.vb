@@ -9,6 +9,7 @@
         prompt.AddChoices(NoText, YesText)
         Select Case AnsiConsole.Prompt(prompt)
             Case YesText
+                SfxPlayer.Play(Sfx.Recovery)
                 player.TrainEnthusiasm()
                 AnsiConsole.MarkupLine($"{player.Name} now has a maximum enthusiasm of {player.MaximumEnthusiasm}!")
                 OkPrompt()

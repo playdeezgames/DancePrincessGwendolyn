@@ -11,10 +11,12 @@
         prompt.AddChoices(NeverMindText, IncreaseSkillText, AddUseText)
         Select Case AnsiConsole.Prompt(prompt)
             Case IncreaseSkillText
+                SfxPlayer.Play(Sfx.Recovery)
                 player.TrainDanceStyleSkill(danceStyle)
                 AnsiConsole.MarkupLine($"{player.Name} now has a skill of {player.DanceSkills(danceStyle)}!")
                 OkPrompt()
             Case AddUseText
+                SfxPlayer.Play(Sfx.Recovery)
                 player.TrainDanceStyleUse(danceStyle)
                 AnsiConsole.MarkupLine($"{player.Name} now has a maximum uses of {player.TotalUses(danceStyle)}!")
                 OkPrompt()

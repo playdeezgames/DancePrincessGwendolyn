@@ -1,13 +1,13 @@
 ﻿Public Enum Sfx
     Title
-    PlayerHit
+    PlayerSuccess
     PlayerMiss
-    EnemyHit
+    RivalSuccess
     EnemyMiss
-    BumpWall
-    HealthUp
-    Death
-    RunAway
-    KillEnemy
+    Tie
+    Recovery
+    PlayerDefeat
+    GiveUp
+    RivalDefeat
     Win
 End Enum

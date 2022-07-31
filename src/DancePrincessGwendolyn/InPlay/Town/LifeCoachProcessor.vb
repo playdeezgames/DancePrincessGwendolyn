@@ -10,6 +10,7 @@
             character.RestoreUses(danceStyle.Value)
             AnsiConsole.MarkupLine($"{character.Name} restores uses of {danceStyle.Value.Name}")
         End If
+        SfxPlayer.Play(Sfx.Recovery)
         OkPrompt()
     End Sub
 End Module
