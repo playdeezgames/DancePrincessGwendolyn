@@ -21,6 +21,13 @@ Public Enum CharacterType
     HipHopPlaya
     LineDancingDiva
     TapDancingDiva
+    BalletChamp
+    BollywoodChamp
+    CheerleadingChamp
+    HipHopChamp
+    LineDancingChamp
+    TapDanceChamp
+    DanceQueen
 End Enum
 Public Module CharacterTypeExtensions
     <Extension>

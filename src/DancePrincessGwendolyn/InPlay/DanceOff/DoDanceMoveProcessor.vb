@@ -70,9 +70,9 @@ Module DoDanceMoveProcessor
     Private Function DoRivalRoll(danceStyle As DanceStyle, rival As Character) As Long
         Dim total As Long = rival.GetStatisticBuff(danceStyle.CharacterStatisticType)
         Dim dieSize = rival.DanceSkills(danceStyle)
-        Dim done = True
         rival.AddUse(danceStyle)
         AnsiConsole.MarkupLine($"{rival.Name} does a {danceStyle.Name} move!")
+        Dim done As Boolean
         Do
             done = True
             Dim roll = RNG.RollDice($"1d{dieSize}")

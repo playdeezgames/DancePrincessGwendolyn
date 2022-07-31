@@ -26,4 +26,12 @@ Public Module DanceStyleExtensions
     Function MaximumUsageStatisticType(danceStyle As DanceStyle) As CharacterStatisticType
         Return DanceStyleDescriptors(danceStyle).MaximumUsageStatisticType
     End Function
+    <Extension>
+    Function ChampCharacterType(danceStyle As DanceStyle) As CharacterType
+        Return DanceStyleDescriptors(danceStyle).ChampCharacterType
+    End Function
+    <Extension>
+    Function TrophyItemType(danceStyle As DanceStyle) As ItemType
+        Return DanceStyleDescriptors(danceStyle).TrophyItemType
+    End Function
 End Module

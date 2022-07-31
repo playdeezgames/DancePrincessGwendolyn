@@ -24,4 +24,16 @@
             Return Game.CharacterStatisticType.BalletSkillMaximumUses
         End Get
     End Property
+
+    Public Overrides ReadOnly Property ChampCharacterType As CharacterType
+        Get
+            Return CharacterType.BalletChamp
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property TrophyItemType As ItemType
+        Get
+            Return ItemType.PearlNecklace
+        End Get
+    End Property
 End Class

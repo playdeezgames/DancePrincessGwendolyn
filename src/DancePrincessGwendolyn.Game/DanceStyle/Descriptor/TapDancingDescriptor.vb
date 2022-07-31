@@ -24,4 +24,16 @@
             Return Game.CharacterStatisticType.TapDancingSkillMaximumUses
         End Get
     End Property
+
+    Public Overrides ReadOnly Property ChampCharacterType As CharacterType
+        Get
+            Return CharacterType.TapDanceChamp
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property TrophyItemType As ItemType
+        Get
+            Return ItemType.PlatinumCuffLinks
+        End Get
+    End Property
 End Class

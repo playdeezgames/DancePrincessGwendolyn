@@ -24,4 +24,16 @@
             Return Game.CharacterStatisticType.CheerleadingSkillMaximumUses
         End Get
     End Property
+
+    Public Overrides ReadOnly Property ChampCharacterType As CharacterType
+        Get
+            Return CharacterType.CheerleadingChamp
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property TrophyItemType As ItemType
+        Get
+            Return ItemType.ClassRing
+        End Get
+    End Property
 End Class

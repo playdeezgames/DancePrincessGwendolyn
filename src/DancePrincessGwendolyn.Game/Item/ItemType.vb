@@ -27,6 +27,13 @@ Public Enum ItemType
     Microphone
     Bullwhip
     Cane
+    PearlNecklace
+    NoseRing
+    ClassRing
+    GoldTooth
+    SilverBeltBuckle
+    PlatinumCuffLinks
+    DiamondTiara
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

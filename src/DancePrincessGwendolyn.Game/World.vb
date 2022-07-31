@@ -10,7 +10,20 @@
             MakeRoad(LocationType.DirtPath, townLocations(index), townLocations((index + 2) Mod townLocations.Count), 19, RouteType.DirtPath)
         Next
 
+        MakeChamps(townLocations)
+        MakeDanceQueen(capitolLocation)
+
         MakePlayerCharacter(townLocations(0))
+    End Sub
+
+    Private Sub MakeDanceQueen(capitolLocation As Location)
+        Character.Create(CharacterType.DanceQueen, capitolLocation)
+    End Sub
+
+    Private Sub MakeChamps(townLocations As List(Of Location))
+        For Each townLocation In townLocations
+            Character.Create(townLocation.DanceStyle.Value.ChampCharacterType, townLocation)
+        Next
     End Sub
 
     Private Sub MakePlayerCharacter(location As Location)

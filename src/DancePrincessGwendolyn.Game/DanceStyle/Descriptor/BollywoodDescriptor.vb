@@ -24,4 +24,16 @@
             Return Game.CharacterStatisticType.BollywoodSkillMaximumUses
         End Get
     End Property
+
+    Public Overrides ReadOnly Property ChampCharacterType As CharacterType
+        Get
+            Return CharacterType.BollywoodChamp
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property TrophyItemType As ItemType
+        Get
+            Return ItemType.NoseRing
+        End Get
+    End Property
 End Class

@@ -24,4 +24,16 @@
             Return Game.CharacterStatisticType.LineDancingSkillMaximumUses
         End Get
     End Property
+
+    Public Overrides ReadOnly Property ChampCharacterType As CharacterType
+        Get
+            Return CharacterType.LineDancingChamp
+        End Get
+    End Property
+
+    Public Overrides ReadOnly Property TrophyItemType As ItemType
+        Get
+            Return ItemType.SilverBeltBuckle
+        End Get
+    End Property
 End Class
